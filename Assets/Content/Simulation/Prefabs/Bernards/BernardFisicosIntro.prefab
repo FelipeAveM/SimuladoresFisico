@@ -1,0 +1,2331 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5285564681116371668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5285564681116371669}
+  - component: {fileID: 5285564681116371656}
+  - component: {fileID: 5285564681116371659}
+  - component: {fileID: 5285564681116371658}
+  m_Layer: 5
+  m_Name: Replay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5285564681116371669
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681116371668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5285564681835487640}
+  m_Father: {fileID: 5352509127764871056}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -15, y: 50}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5285564681116371656
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681116371668}
+  m_CullTransparentMesh: 0
+--- !u!114 &5285564681116371659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681116371668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.36862746, g: 0.019607844, b: 0.043137256, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 93b57332f3e48f0428fb49a22530d048, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &5285564681116371658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681116371668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5285564681116371659}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &5285564681835487643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5285564681835487640}
+  - component: {fileID: 5285564681835487646}
+  - component: {fileID: 5285564681835487641}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5285564681835487640
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681835487643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5285564681116371669}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5285564681835487646
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681835487643}
+  m_CullTransparentMesh: 0
+--- !u!114 &5285564681835487641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285564681835487643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 9da450ee024456947a685bba0c95ac4f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!1 &5286110058425208424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5352217665397139760}
+  - component: {fileID: 5354670075557634216}
+  - component: {fileID: 5245734224357452350}
+  - component: {fileID: 5245621699977021508}
+  m_Layer: 5
+  m_Name: Next
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5352217665397139760
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286110058425208424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5351625832776053182}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 30}
+  m_SizeDelta: {x: 15, y: 15}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &5354670075557634216
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286110058425208424}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245734224357452350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286110058425208424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.12348701, g: 0.29135272, b: 0.3490566, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: cdb2c46139d695446904ed6c5d1a2f32, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &5245621699977021508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286110058425208424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5245734224357452350}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &5286197732101116940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5352509127764871056}
+  - component: {fileID: 5354111912669542602}
+  - component: {fileID: 5245797536848669844}
+  m_Layer: 5
+  m_Name: Character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5352509127764871056
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286197732101116940}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5822064700019355817}
+  - {fileID: 5351974606391332330}
+  - {fileID: 5351550921952251534}
+  - {fileID: 5351776342523968402}
+  - {fileID: 5285564681116371669}
+  m_Father: {fileID: 5351656790371850066}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -308.1}
+  m_SizeDelta: {x: 180, y: 260}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5354111912669542602
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286197732101116940}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245797536848669844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286197732101116940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5286199286543332856}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!1 &5286199286543332856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351625832776053182}
+  - component: {fileID: 5354535733789778976}
+  - component: {fileID: 5246123625801416774}
+  m_Layer: 5
+  m_Name: Tooltip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351625832776053182
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286199286543332856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5352386624772328790}
+  - {fileID: 5351613352269267850}
+  - {fileID: 5352217665397139760}
+  m_Father: {fileID: 5351656790371850066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -195}
+  m_SizeDelta: {x: 180, y: 190}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &5354535733789778976
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286199286543332856}
+  m_CullTransparentMesh: 0
+--- !u!114 &5246123625801416774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286199286543332856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.784}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: f9ec9d4d1e73f5645b552b91b9be9e21, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!1 &5286364115139875082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5352134969544598738}
+  - component: {fileID: 5354770460270143086}
+  - component: {fileID: 5246456382640720052}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5352134969544598738
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286364115139875082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5351776342523968402}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5354770460270143086
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286364115139875082}
+  m_CullTransparentMesh: 0
+--- !u!114 &5246456382640720052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286364115139875082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 61f6c8b19f9034347b59812a84d461e2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!1 &5286367313651253550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351974606391332330}
+  - component: {fileID: 5246627275150884864}
+  - component: {fileID: 5354688529100518406}
+  - component: {fileID: 5246453253790676948}
+  m_Layer: 5
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351974606391332330
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286367313651253550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 5352509127764871056}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 10, y: -67.417175}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5246627275150884864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286367313651253550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300040, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &5354688529100518406
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286367313651253550}
+  m_CullTransparentMesh: 0
+--- !u!114 &5246453253790676948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286367313651253550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16287e65f5fd6c945a413f06c82e776b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationList:
+  - animationName: Lipsycn
+    pinPong: 0
+    transitions:
+    - image: {fileID: 21300000, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300002, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300004, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300006, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300008, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300010, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300012, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300014, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300016, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300018, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300020, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300022, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300024, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300026, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300028, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300030, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300032, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300034, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300036, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300038, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    - image: {fileID: 21300040, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  timeBetweenTranstions: 0.1
+  start: 1
+  loop: 0
+  isClose: 0
+  destroyOnEnd: 0
+  baseImage: {fileID: 21300040, guid: 6781427e8d7b60c40a44ac74e300c61a, type: 3}
+  defaultAnimation: 0
+--- !u!1 &5286817961057887492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351613352269267850}
+  - component: {fileID: 5353776942198033860}
+  - component: {fileID: 5245824633978264136}
+  - component: {fileID: 5242887747029946166}
+  m_Layer: 5
+  m_Name: Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351613352269267850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286817961057887492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5351717551710059656}
+  m_Father: {fileID: 5351625832776053182}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -10, y: 0}
+  m_SizeDelta: {x: 12, y: 12}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &5353776942198033860
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286817961057887492}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245824633978264136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286817961057887492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.12348701, g: 0.29135272, b: 0.3490566, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 93b57332f3e48f0428fb49a22530d048, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &5242887747029946166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286817961057887492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5245824633978264136}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &5286830638927818566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351550921952251534}
+  - component: {fileID: 5242766443882386726}
+  - component: {fileID: 5354108462805076252}
+  - component: {fileID: 5245966619424230100}
+  m_Layer: 5
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351550921952251534
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286830638927818566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 5352509127764871056}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1.5, y: 108}
+  m_SizeDelta: {x: 240, y: 220}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5242766443882386726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286830638927818566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 95b9c7809ed12904db4a7d6e0eff1a1a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &5354108462805076252
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286830638927818566}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245966619424230100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286830638927818566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16287e65f5fd6c945a413f06c82e776b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationList:
+  - animationName: Grettings
+    pinPong: 0
+    transitions:
+    - image: {fileID: 21300000, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300002, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300004, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300006, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300008, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300010, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300012, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300014, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300016, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300018, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300020, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300022, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300024, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300026, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300028, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300030, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300032, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300034, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300036, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300038, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300040, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300042, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    - image: {fileID: 21300044, guid: db6b2c97cb087214c83e70a3e33d253f, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Whenever
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300002, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300004, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300006, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300008, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    - image: {fileID: 21300010, guid: 32814cefb409fe444991d9cabe7e92c4, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Advice
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300002, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300004, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300006, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300008, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300010, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300010, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300010, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300016, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300016, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300010, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300010, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300012, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300014, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300016, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    - image: {fileID: 21300016, guid: fc94e36905df4e940b3868d51247f47b, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Bored
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300002, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300004, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300006, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300008, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300010, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300012, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300014, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300016, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300018, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300020, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300022, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300022, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300026, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300028, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300026, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300024, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300022, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300020, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300018, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300016, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300014, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300012, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300010, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    - image: {fileID: 21300008, guid: 812ca18642d6233429851affa2eedb09, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Clap
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300002, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300004, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300006, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300008, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300010, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300012, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300014, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300016, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300014, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300012, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300010, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300008, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300010, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300012, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300014, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    - image: {fileID: 21300016, guid: 44f6d1d870f57cd48b32af5226de359a, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Count
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300002, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300004, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300006, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300008, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300010, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300012, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300014, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300016, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300018, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300020, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300022, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300024, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300026, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300028, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300030, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300032, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300034, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300036, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300038, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300040, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    - image: {fileID: 21300042, guid: f84066698f388ca4f85aff3644b83ea8, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Point
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300002, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300004, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300006, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300008, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300010, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    - image: {fileID: 21300012, guid: fe3bf18838d14d04fb84699435928123, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: PointAreaRight
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300002, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300004, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300006, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300008, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300010, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300012, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300014, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300016, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300018, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300020, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300022, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    - image: {fileID: 21300024, guid: e670a149faa7c7c4ca88253b50e5d5a3, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: PointRight
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300002, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300004, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300006, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    - image: {fileID: 21300008, guid: b52f859876d027742b628cc2e9936a1c, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: PointUP
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300002, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300004, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300006, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    - image: {fileID: 21300008, guid: a4666c290c0c90842a3afba999a07f56, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: UpHands
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300002, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300004, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300006, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300008, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300008, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300010, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300010, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300012, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300012, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300014, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    - image: {fileID: 21300014, guid: 63dcc880ba94dea46b4ad59741d1630e, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - animationName: Share
+    pinPong: 1
+    transitions:
+    - image: {fileID: 21300000, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300002, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300004, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300006, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300008, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300010, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300010, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300010, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300010, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300010, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300012, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300014, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300018, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300018, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300016, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300016, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300020, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300020, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300020, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    - image: {fileID: 21300020, guid: 948ccaad71d4de64d852344e767fb93c, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  timeBetweenTranstions: 0.1
+  start: 0
+  loop: 0
+  isClose: 0
+  destroyOnEnd: 0
+  baseImage: {fileID: 21300000, guid: 95b9c7809ed12904db4a7d6e0eff1a1a, type: 3}
+  defaultAnimation: 1
+--- !u!1 &5286955209425843726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5352386624772328790}
+  - component: {fileID: 5354704285376996496}
+  - component: {fileID: 5245751666285106806}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5352386624772328790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286955209425843726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5351625832776053182}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: -40, y: -40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5354704285376996496
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286955209425843726}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245751666285106806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286955209425843726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9e6d7538ea0c1046b1668e65aa59c70, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!1 &5286986160760516312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351717551710059656}
+  - component: {fileID: 5353917595751223674}
+  - component: {fileID: 5245991891023892238}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351717551710059656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286986160760516312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5351613352269267850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -6, y: -6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5353917595751223674
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286986160760516312}
+  m_CullTransparentMesh: 0
+--- !u!114 &5245991891023892238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286986160760516312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: f2a4f3f6262874648adcca73b69aeb26, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!1 &5287039556507742698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351776342523968402}
+  - component: {fileID: 5353953457342803716}
+  - component: {fileID: 5246613128478311638}
+  - component: {fileID: 5242787458219975556}
+  m_Layer: 5
+  m_Name: Mute
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351776342523968402
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287039556507742698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5352134969544598738}
+  m_Father: {fileID: 5352509127764871056}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -15, y: 15}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5353953457342803716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287039556507742698}
+  m_CullTransparentMesh: 0
+--- !u!114 &5246613128478311638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287039556507742698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.12348701, g: 0.29135272, b: 0.3490566, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 93b57332f3e48f0428fb49a22530d048, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &5242787458219975556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287039556507742698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5246613128478311638}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &5287205729107802286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5351656790371850066}
+  - component: {fileID: 5350856278229972540}
+  - component: {fileID: 5246007928667254152}
+  - component: {fileID: 5246664314589817498}
+  m_Layer: 5
+  m_Name: BernardFisicosIntro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5351656790371850066
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287205729107802286}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5351625832776053182}
+  - {fileID: 5352509127764871056}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 180, y: 460}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5350856278229972540
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287205729107802286}
+  m_CullTransparentMesh: 0
+--- !u!114 &5246007928667254152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287205729107802286}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+--- !u!114 &5246664314589817498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287205729107802286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c391aea1504e20d4a850e291d18a61bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayCharacters:
+  - typeCharacter: 0
+    elements:
+    - {fileID: 5351974606391332330}
+    - {fileID: 5351550921952251534}
+  playinStart: 1
+  syncrony: 1
+  moments:
+  - phrases:
+    - selectCharacter: 1
+      phrase: "Bienvenidos al proceso de simulaci\xF3n de riesgo f\xEDsico. Las empresas
+        disponibles en este simulador se encuentran representadas por un bot\xF3n."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RFisico/Bernard/Bernard-RF1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "En un principio s\xF3lo aparecer\xE1 activa la primera, a medida que
+        avancen se activar\xE1n las otras organizaciones. En un principio s\xF3lo
+        aparecer\xE1 activa la primera, a medida que avancen se activar\xE1n las otras
+        organizaciones. "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "Cada uno de ustedes debe simular las empresas y despu\xE9s reunirse
+        con su equipo a consolidar la informaci\xF3n para entregar su informe. "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 3
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-2
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "Para la simulaci\xF3n ustedes deben suministrar los datos. Existen
+        espacios de justificaci\xF3n que deben ser diligenciados para incluir en el
+        informe. "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 6
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "Tomen atenta nota de lo que diga cada uno de los jefes de cada empresa
+        porque esa informaci\xF3n es necesaria para el an\xE1lisis. Revisen adem\xE1s
+        las normas vigentes. "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-4
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "El prop\xF3sito es identificar los peligros, valorar los riesgos y
+        construir la matriz de identificaci\xF3n, evaluaci\xF3n y valoraci\xF3n de
+        los peligros, para luego proponer estrategias de intervenci\xF3n. "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 10
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-5
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 1
+      phrase: "Es hora de iniciar, oprime el bot\xF3n y conocer\xE1s la primera empresa."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 3
+      audioPath: event:/RFisico/Bernard/Bernard-RF1-6
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: ActivateBusiness
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: Bienvenido a tu primera actividad, debes identificar los peligros dentro
+        de la empresa, para esto debes desplazar el mouse por todo el espacio,
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "cuando veas que la imagen se distorsiona, te indicar\xE1 que debes
+        hacer clic y se ampliar\xE1 el peligro encontrado; a su vez, aparecer\xE1
+        la ficha No. 1,"
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 3
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab1-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: que debes diligenciar para cada uno de los riesgos que identifiques.
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab1-2
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: SetMoveFreehead
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: ActiveRisksMouseAction
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: "Muy bien, has finalizado tu primera actividad, ahora interactuar\xE1s
+        con cada uno de los colaboradores de la oficina."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Of1-3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: SetAdvance
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 20
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: ActiveRisksMouseAction
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: SetMoveFreehead
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: NextSlider
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: OpenDocInWeb
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: seguridad/FormatoColaboradores.pdf
+              m_BoolArgument: 0
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: "Vamos a realizar la segunda actividad donde debes elegir con el cursor
+        los colaboradores que te informar\xE1n sobre sus aspectos personales, "
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "laborales y de salud que son de vital importancia para las siguientes
+        actividades. Con esta informaci\xF3n debes diligenciar la ficha 2."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab3-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "Debes ser muy cuidadoso, escuchar con atenci\xF3n y tomar apuntes.
+        Con los peligros ya identificados en la ficha 1 y sumado a los s\xEDntomas
+        de los colaboradores de la empresa,"
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 3
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab3-2
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "deben investigar el nombre de la enfermedad o afecci\xF3n que puede
+        desarrollar el personaje."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab3-3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "Adicionalmente les recuerdo la importancia de toda la informaci\xF3n
+        suministrada por el supervisor, la cual es \xFAtil para tus actividades."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab3-4
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: SetMoveFreehead
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: ActiveCharactersMouseAction
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: Muy bien, has completado tu segunda actividad.
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 5
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab4
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: SetAdvance
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 40
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: ActiveCharactersMouseAction
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: SetMoveFreehead
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: set_interactable
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "Se descargar\xE1 la informaci\xF3n porque la vas a necesitar en la
+        Evaluaci\xF3n. Da clic en el bot\xF3n de EVALUACI\xD3N para continuar el proceso."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab4-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: set_interactable
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_MethodName: DowloadResult
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 2
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: "Ahora es el momento de que realices la evaluaci\xF3n de los riesgos
+        de seguridad identificados en esta empresa,"
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RSeguridad/Laboratorio/Bernard-RS-Lab/Bernard-RS-Lab3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: set_interactable
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "para ello debes diligenciar la ficha No. 3 matriz de riesgos, la cual
+        est\xE1 elaborada con base en la Gu\xEDa t\xE9cnica GTC que ya debes conocer
+        muy bien."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RSeguridad/Laboratorio/Bernard-RS-Lab/Bernard-RS-Lab3-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "Deber\xE1s diligenciar cada una de las columnas para realizar tu evaluaci\xF3n,
+        recuerda revisar siempre tu GTC para corroborar las adecuadas interpretaciones
+        de la evaluaci\xF3n."
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RSeguridad/Laboratorio/Bernard-RS-Lab/Bernard-RS-Lab3-2
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: Cuando la tengas toda diligenciada debes dar clic en GUARDAR.
+      fontSize: 14
+      justyfy: 0
+      waitEndAction: 0.1
+      bodyAnimation: 0
+      audioPath: event:/RSeguridad/Laboratorio/Bernard-RS-Lab/Bernard-RS-Lab3-3
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: "Has realizado la valoraci\xF3n de los peligros de seguridad identificados
+        en esta empresa. Por lo tanto, ahora te invito a que contin\xFAes con la \u201CTABLA
+        DE EVALUACI\xD3N\u201D"
+      fontSize: 0
+      justyfy: 0
+      waitEndAction: 0
+      bodyAnimation: 5
+      audioPath: event:/RSeguridad/Laboratorio/Bernard-RS-Lab/Bernard-RS-Lab4
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - phrases:
+    - selectCharacter: 0
+      phrase: "Ahora debes determinar los controles seg\xFAn el factor de riesgo que
+        previamente evaluaste; "
+      fontSize: 0
+      justyfy: 0
+      waitEndAction: 0
+      bodyAnimation: 0
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab9
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - selectCharacter: 0
+      phrase: "recuerda que debes justificar por qu\xE9 aplicas ese control o medida
+        propuesta y clasificarlos seg\xFAn la GTC."
+      fontSize: 0
+      justyfy: 0
+      waitEndAction: 0
+      bodyAnimation: 3
+      audioPath: event:/RBiologicos/Laboratorio/Bernard-RB-Lab/Bernard-RB-Lab9-1
+      StartPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      EndPhrase:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  waitBetweenWords: 0.1
+  waitBetweenPhrases: 0.5
+  playInSeconds: 0.2
+  moduleAmplitude: 20
+  closeTooltip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5286199286543332856}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  soundImg: {fileID: 21300000, guid: 61f6c8b19f9034347b59812a84d461e2, type: 3}
+  muteImg: {fileID: 21300000, guid: c5f7a78cbdacc9547a65b26278c7db53, type: 3}
+  defaultAudioPath: event:/RFisico/Bernard/Bernard-RF1
+--- !u!1 &7158563611819844452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5822064700019355817}
+  - component: {fileID: 657699534843072345}
+  - component: {fileID: 7026182118100978477}
+  m_Layer: 5
+  m_Name: Supervisor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5822064700019355817
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158563611819844452}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 5352509127764871056}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: 180, y: 262.01}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &657699534843072345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158563611819844452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300004, guid: 112e5ba02aae1eb448b281837d551e38, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &7026182118100978477
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158563611819844452}
+  m_CullTransparentMesh: 0

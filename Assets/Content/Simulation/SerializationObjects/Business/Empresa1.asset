@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a502f34c397a1fa4abdc64155b1c39fd, type: 3}
+  m_Name: Empresa1
+  m_EditorClassIdentifier: 
+  name: 0
+  imageResource: {fileID: 21300000, guid: e896759fdd48447b4b5872eed338fac3, type: 3}
+  sections:
+  - sectionName: "Recepci\xF3n"
+    imageResource: {fileID: 0}
+  - sectionName: Sala de espera
+    imageResource: {fileID: 0}
+  - sectionName: "Direcci\xF3n general"
+    imageResource: {fileID: 21300000, guid: 88303180170c9344fbb0dfd73a959898, type: 3}
+  - sectionName: Toma de muestras
+    imageResource: {fileID: 21300000, guid: e5f216ddd1712e043938a92493eb7430, type: 3}
+  - sectionName: "Im\xE1genes diagn\xF3sticas"
+    imageResource: {fileID: 21300000, guid: f46b8d55b3828f14dbd66036bcbb5ba0, type: 3}
+  - sectionName: "Esterilizaci\xF3n"
+    imageResource: {fileID: 0}
+  - sectionName: "An\xE1lisis de muestras"
+    imageResource: {fileID: 21300000, guid: dfa81f822de76614ba23a02c4cc4a665, type: 3}
+  - sectionName: "Almac\xE9n de reactivos"
+    imageResource: {fileID: 0}

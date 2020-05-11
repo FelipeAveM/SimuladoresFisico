@@ -1,0 +1,147 @@
+{
+  "library": [
+    {
+      "simulador": 0,
+      "links": [
+        {
+          "title": "BIOGAVAL",
+          "url": "http://www.higieneambiental.com/sites/default/files/images/pdf/biogaval2013.pdf"
+				},
+				{
+					"title": "Exposición a agentes químicos y biológicos, prevención de riesgos",
+					"url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/sst_86_enlaces.pdf"
+				}
+      ]
+    },
+    {
+      "simulador": 1,
+      "links": [
+        {
+          "title": "Guía Técnica Colombiana GTC-45",
+          "url": "http://idrd.gov.co/sitio/idrd/sites/default/files/imagenes/gtc450.pdf"
+        }
+      ]
+    },
+    {
+      "simulador": 2,
+      "links": [
+        {
+          "title": "Gatiso de Benceno",
+          "url": "http://www.colombianadesalud.org.co/SALUD%20OCUPACIONAL/GUIAS/3-gatiso%20benceno%20y%20sus%20derivados.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Acetona",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/0a100/nspn0087.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ácido acético glacial",
+          "url": "http://www.uacj.mx/IIT/CICTA/Documents/Acidos/Acido%20Ac%C3%A9tico.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ácido clorhídrico",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/101a200/nspn0163.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ácido muriático",
+          "url": "http://corponor.gov.co/corponor/sigescor2010/Hojas%20de%20Seguridad/HS%20Acido%20Muriatico%202015.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ácido Oxálico",
+          "url": "http://www.andesia.com/doc/quimicos/HojaSeguridad_Acido-Oxalico.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ácido Sulfúrico",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/301a400/nspn0362.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Alquilfenoles",
+          "url": "http://www.gtm.net/images/industrial/n/NONIL%20FENOL.pdf"
+        },
+        {
+          "title": "Hoja de seguridad ambientador",
+          "url": "http://seguridadnapoles.co/napoles/administrativa/3.2%20Proceso%20de%20Gesti%F3n%20HSE/3.2.2%20Subproceso%20de%20Gesti%F3n%20de%20SISO/HOJAS% 20DE%20SEGURIDAD%20ASEO/FT-GA-05%20HOJA%20DE%20SEGURIDAD%20ASEO(AMBIENTADOR).pdf"
+        },
+        {
+          "title": "Hoja de seguridad Benceno",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/0a100/nspn0015.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Carbonato de sodio",
+          "url": "http://www.ridsso.com/documentos/muro/854_1456237684_56cc6c74ace3d.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Clorobenceno",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/601a700/nspn0642.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Colorantes Azoicos",
+          "url": "http://www.javeriana.edu.co/documents/4486808/5015300/NEGRO+DE+ERICROMO+%28Indicador+Valorar+Metales%29+_+MERCK.pdf/da3fedab-dd4a-4d48-ac47-8 4c05bc882a3?version=1.0"
+        },
+        {
+          "title": "Hoja de seguridad Desengrasante industrial",
+          "url": "http://suprisa.com.co/suprisa.com.co/quickbpo/DESENGRASANTE%20INDUSTRIAL%20OU%C3%8D%20-%20FT.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Desinfectante",
+          "url": "http://www.javeriana.edu.co/documents/4486808/5015300/CLOROX+%28Hipoclorito+de+Sodio%29+_THE+CLOROX+COMPANY.pdf/4ef7970d-d03b-4f 7f-a240-596db 90fd98c?version=1.0"
+        },
+        {
+          "title": "Hoja de seguridad Detergente",
+          "url": "http://corponor.gov.co/corponor/sigescor2010/Hojas%20de%20Seguridad/HS%20Jabon%20Polvo%202015.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Diesel",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/401a500/1561.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Éter dietílico",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/301a400/nspn0355.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Fibras sintéticas",
+          "url": "https://www.sage.com.mx/intro/fichas/fibra-macro-sintetica-de-reforzamiento-sika-fiber-ms.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Formaldehidos",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/201a300/nspn0275.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Ftalatos",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/0a100/nspn0036.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Oxido de calcio",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/401a500/nspn0409.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Nitrato de Aluminio",
+          "url": "http://www.javeriana.edu.co/documents/4486808/5015300/NITRATO+ALUMINIO_PANREAC.pdf/ba8bde5e-a80b-4bdc-b4a8-ebeb3c05fd4f?version=1.0"
+        },
+        {
+          "title": "Hoja de seguridad Soda caustica",
+          "url": "http://www.gtm.net/images/industrial/s/SODA%20CAUSTICA%20LIQUIDA.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Sulfato de Aluminio",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/1101a1200/nspn1191.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Sulfato de sodio",
+          "url": "http://www.gtm.net/images/industrial/s/SULFATO%20DE%20SODIO%20ANHIDRO.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Tolueno",
+          "url": "http://www.insht.es/InshtWeb/Contenidos/Documentacion/FichasTecnicas/FISQ/Ficheros/0a100/nspn0078.pdf"
+        },
+        {
+          "title": "Hoja de seguridad Hipoclorito",
+          "url": "http://www.cerveceroscaseros.com.uy/site/wp-content/uploads/2016/10/HojaSeguridad-Hipoclorito.pdf"
+        },
+        {
+          "title": "Hoja de seguridad pintura con disolvente",
+          "url": "http://www.pinturasalgreco.com.co/fichastecnicas/disolvente.pdf"
+        }
+      ]
+    }
+  ]
+}
