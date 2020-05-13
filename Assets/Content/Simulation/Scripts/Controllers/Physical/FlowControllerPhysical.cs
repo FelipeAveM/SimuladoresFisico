@@ -72,7 +72,7 @@ public class FlowControllerPhysical : MonoBehaviour {
         checkJSONDataPlayer();
         //Pruebas
         //dataPlayer.data.setMatrizMedidores1emp();
-        Debug.Log(JsonUtility.ToJson(dataPlayer));
+        //Debug.Log(JsonUtility.ToJson(dataPlayer));
         switch (dataPlayer.getFichaActual()){
             case 0:
                 //Nuevo
@@ -121,16 +121,16 @@ public class FlowControllerPhysical : MonoBehaviour {
 
     void checkJSONDataPlayer(){
         //Real
-        data = new DataGame();
         //getSimulatorData();
-        getSimulatorDataPlayer();
-        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
-        /*
-        //Pruebas
+        //getSimulatorDataPlayer();
         data = new DataGame();
-        data.setListaFinalMedidores(listaFinalMedidoresPrueba);
-        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 4, data);
-        */
+        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
+        
+        //Pruebas
+        //data = new DataGame();
+        //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
+        //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 4, data);
+        
     }
     void GetReference(){
 		nextBtn = buttonBar.Find ("Button").Find("btn").GetComponent<Button>();
@@ -415,10 +415,11 @@ public class FlowControllerPhysical : MonoBehaviour {
         }
     }
     public void finishTuto(GameObject tuto){
-        if(!tutoMedidores){
+        /*if(!tutoMedidores){
             tuto.gameObject.SetActive(true);
         }
-        tutoMedidores = true;
+        tutoMedidores = true;*/
+        tuto.gameObject.SetActive(true);
     }
     public void pasarIntro(GameObject canvasIn){
         if(Ficha4PhysicalRisk.toIntro && Ficha1Fisicos.empresasCompletadas < 2){
@@ -443,6 +444,6 @@ public class FlowControllerPhysical : MonoBehaviour {
         text.color = c;
     }
     public static void printDataPlayer(){
-        Debug.Log(JsonUtility.ToJson(dataPlayer));
+        //Debug.Log(JsonUtility.ToJson(dataPlayer));
     }
 }

@@ -27,14 +27,14 @@ public class Ficha1Fisicos : MonoBehaviour
     [System.NonSerialized] public static int areasEmpCompletas = 0;
     [System.NonSerialized] public static bool guardoAreaF1 = false;
     public bool estadoCompletado = false;
-    void Start(){
+    public void Start(){
         alertMessage = alert.GetComponent<AlertMessage>();
         businessMapParent = transform.GetChild(0);
         businessMapParent.gameObject.SetActive(true);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() < 5 && FlowControllerPhysical.dataPlayer.getFichaActual() > 1) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[0]);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 1) FlowControllerPhysical.dataPlayer.setFichaActual(2);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5) FlowControllerPhysical.dataPlayer.setFichaActual(6);
-        Debug.Log(FlowControllerPhysical.dataPlayer.getFichaActual());
+        Debug.Log("Ficha 1 Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
         if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2){
             if(FlowControllerPhysical.dataPlayer.getFichaActual() != 6){
                 if(listaFinalMedidores[0].Length > 7){
@@ -60,6 +60,14 @@ public class Ficha1Fisicos : MonoBehaviour
         }
         if(areasEmpCompletas != 8) changeTextSize();
     }
+
+    public void StarForcedF1(){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2){
+           Debug.Log("Start F1 Forced");
+           Start();
+       } 
+    }
+
     public void reStart(){
         if(empresasCompletadas > 0){
             Start();
@@ -726,6 +734,6 @@ public class Ficha1Fisicos : MonoBehaviour
     }
     public void toJSONP(){
         Debug.Log(JsonUtility.ToJson(matrizMedidores[areaActual-1]));
-        FlowControllerPhysical.printDataPlayer();
+        //FlowControllerPhysical.printDataPlayer();
     }
 }

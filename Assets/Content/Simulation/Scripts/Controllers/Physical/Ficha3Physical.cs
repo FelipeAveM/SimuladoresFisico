@@ -13,7 +13,7 @@ public class Ficha3Physical : MonoBehaviour {
     public static MatrizMedidores [] matVar;
     public static List<MatrizMedidores[]> listaFinalMedidores3 = new List<MatrizMedidores[]>();
     public static List<MatrizMedidores[]> listaFinalMedidores3b = new List<MatrizMedidores[]>();
-    void Start(){
+    public void Start(){
 		alertMessage = alert.GetComponent<AlertMessage>();
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2) FlowControllerPhysical.dataPlayer.setFichaActual(3);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6) FlowControllerPhysical.dataPlayer.setFichaActual(7);
@@ -21,7 +21,12 @@ public class Ficha3Physical : MonoBehaviour {
         else matVar = FlowControllerPhysical.data.getListaFinalMedidores()[1];
         LoadInfo();
     }
-    
+    public void StarForcedF3(){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() > 3){
+           Debug.Log("Start F3 Forced");
+           Start();
+       } 
+    }
     void LoadInfo(){
         for (int j = 0; j < 8; j++){
             //Debug.Log(JsonUtility.ToJson(matVar[j]));

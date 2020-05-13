@@ -26,7 +26,7 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
     [System.NonSerialized] public static bool toIntro;
     [System.NonSerialized] public static int width = 2045;
     [System.NonSerialized] public static int height = 6073;
-    void Start(){
+    public void Start(){
         //Pruebas
         //matRiesgo = Ficha3Physical.listaFinalMedidores3[0];
         matRiesgo = Ficha3Physical.listaFinalMedidores3[Ficha1Fisicos.empresasCompletadas-1];
@@ -44,10 +44,17 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
         toIntro = false;
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3) FlowControllerPhysical.dataPlayer.setFichaActual(4);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 7) FlowControllerPhysical.dataPlayer.setFichaActual(8);
-        Debug.Log(FlowControllerPhysical.dataPlayer.getFichaActual());
+        Debug.Log("Ficha 4 Ficha Actual: "+FlowControllerPhysical.dataPlayer.getFichaActual());
         LoadInfo();
 
     }
+    public void StarForcedF4(){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() > 4){
+           Debug.Log("Start F4 Forced");
+           Start();
+       } 
+    }
+
     void changeCellDrop(){
         area = tablaPrincipal.GetChild(areaInt);
         cellE = area.Find("CellDescripciones").GetChild(riesgoInt).Find("celle").Find("Edropdown");
@@ -258,7 +265,6 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
 
     }
     public void StartForced(){
-        Debug.Log("Entró a StarForced");
         if(Ficha1Fisicos.empresasCompletadas > 1){
             Start();
             Debug.Log("Llamó el método Start() ficha 4");
@@ -528,12 +534,14 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
                             Text textoV = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Text").GetComponent<Text>();
                             Text textoW = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Text").GetComponent<Text>();
                             if(textoD.text == "" || textoQ.text == "" || textoR.text == "" || textoS.text == "" || textoT.text == "" || textoU.text == "" || textoV.text == "" || textoW.text == ""){
+                                Debug.Log("i: " + i + " j: " + j);
                                 return true;
                             }
                             Text textoI = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celli").Find("Value").Find("Placeholder").GetComponent<Text>();
                             Text textoM = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellm").Find("Value").Find("Placeholder").GetComponent<Text>();
                             Text textoO = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cello").Find("Value").Find("Placeholder").GetComponent<Text>();
                             if(textoI.text == "- -" || textoM.text == "- -" || textoO.text == "- -"){
+                                Debug.Log("i: " + i + " j: " + j);
                                 return true;
                             }
                         }
@@ -542,7 +550,7 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
             }
             return false;
         }
-        else return true;
+        else return false;
     }
     public void guardarMatriz(){
         int contador = 0;
@@ -768,7 +776,9 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
 
     }
     public void finishHim(GameObject gameObjectC){
-        if(matrizLlena()){
+        Debug.Log("Faltan datos en la matriz? ->" + matrizLlena());
+        Debug.Log("Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
+        if(!matrizLlena()){
             if(FlowControllerPhysical.dataPlayer.getFichaActual() == 8){
                 Debug.Log("Créditooooosss!!!");
                 gameObjectC.SetActive(true);
@@ -777,6 +787,8 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
             else{
                 FlowControllerPhysical.dataPlayer.setFichaActual(5);
                 Debug.Log(FlowControllerPhysical.dataPlayer.getFichaActual());
+                Debug.Log("Matriz Llena: " + matrizLlena());
+                Debug.Log("Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
             }
         }
     }
