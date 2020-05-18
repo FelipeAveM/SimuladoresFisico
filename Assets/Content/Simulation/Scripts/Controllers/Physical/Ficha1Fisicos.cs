@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
-
+using System.Linq;
+//using System.Diagnostics;
+using UnityEngine.SceneManagement;
 public class Ficha1Fisicos : MonoBehaviour
 {
     private AlertMessage alertMessage;
@@ -16,6 +18,7 @@ public class Ficha1Fisicos : MonoBehaviour
     [System.NonSerialized] public static MatrizMedidores [] matrizMedidores = new MatrizMedidores[8];
     [System.NonSerialized] public static MatrizMedidores [][] matrizFinalMedidores = new MatrizMedidores[3][];
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores = new List<MatrizMedidores[]>();
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>();
     [System.NonSerialized] public static int empresasCompletadas = 0;
     [System.NonSerialized] public string [] datosMatriz = new string[20];
     private Transform businessMapParent;
@@ -28,23 +31,37 @@ public class Ficha1Fisicos : MonoBehaviour
     [System.NonSerialized] public static bool guardoAreaF1 = false;
     public bool estadoCompletado = false;
     public void Start(){
+        listaFinalMedidoresPrueba = FlowControllerPhysical.data.getListaFinalMedidores();
         alertMessage = alert.GetComponent<AlertMessage>();
         businessMapParent = transform.GetChild(0);
         businessMapParent.gameObject.SetActive(true);
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() < 5 && FlowControllerPhysical.dataPlayer.getFichaActual() > 1) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[0]);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 1) FlowControllerPhysical.dataPlayer.setFichaActual(2);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5) FlowControllerPhysical.dataPlayer.setFichaActual(6);
         Debug.Log("Ficha 1 Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2){
-            if(FlowControllerPhysical.dataPlayer.getFichaActual() != 6){
-                if(listaFinalMedidores[0].Length > 7){
-                    areasEmpCompletas = 8;
-                    estadoCompletado = true;
-                    Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(1).GetChild(1);
-                    disableChilds(zonasHijas.gameObject);
-                    Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(3);
-                    guardarButon.gameObject.SetActive(true);
-                }
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2 && FlowControllerPhysical.dataPlayer.getFichaActual() < 6) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[0]);
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 6) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[1]);
+        areasEmpCompletas = 0;
+        estadoCompletado = false;
+        //Pruebas
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2 && FlowControllerPhysical.dataPlayer.getFichaActual() != 6){
+            if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){            
+                areasEmpCompletas = 8;
+                estadoCompletado = true;
+                Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(1).GetChild(1);
+                disableChilds(zonasHijas.gameObject);
+                Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(3);
+                guardarButon.gameObject.SetActive(true);
+                //Prueba
+                //FlowControllerPhysical.setM2();
+
+            }
+            else{
+                areasEmpCompletas = 8;
+                estadoCompletado = true;
+                Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(1).GetChild(1);
+                disableChilds(zonasHijas.gameObject);
+                Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(3);
+                guardarButon.gameObject.SetActive(true);
             }
         }
         for (int i = 0; i < businessMapParent.childCount; i++){
@@ -62,7 +79,7 @@ public class Ficha1Fisicos : MonoBehaviour
     }
 
     public void StarForcedF1(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5){
            Debug.Log("Start F1 Forced");
            Start();
        } 
@@ -482,131 +499,139 @@ public class Ficha1Fisicos : MonoBehaviour
 
     }
     public void guardarTablaMedidores(GameObject tablaMedidores){
-        if(!estadoCompletado){
-            string errorMessage = "";
-            bool isFull = true;
-            Transform tablaRiesgo = transform.Find("BusinessMap");
-            Transform tablaFE = null;
-            Transform botonFE = null; 
-            Transform botonesMedidores = null;
-            Transform botonesRiesgos = null;
-            Transform zona = null;
-            Transform botonGuardarF1 = null;
-            //Lab
-            if(empresaSeleccionada == 1){
-                tablaFE = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("FichaEmpleados");
-                botonesMedidores = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("Medidores");
-                botonesRiesgos = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("BotonesMedidores");
-                botonFE = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
-                zona = tablaRiesgo.Find("Empresa1").Find("DescZoneLab");
-                botonGuardarF1 = tablaRiesgo.Find("Empresa1").Find("GuardarLab");
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2 || FlowControllerPhysical.dataPlayer.getFichaActual() == 6){
+            if(!estadoCompletado){
+                string errorMessage = "";
+                bool isFull = true;
+                Transform tablaRiesgo = transform.Find("BusinessMap");
+                Transform tablaFE = null;
+                Transform botonFE = null; 
+                Transform botonesMedidores = null;
+                Transform botonesRiesgos = null;
+                Transform zona = null;
+                Transform botonGuardarF1 = null;
+                //Lab
+                if(empresaSeleccionada == 1){
+                    tablaFE = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("FichaEmpleados");
+                    botonesMedidores = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("Medidores");
+                    botonesRiesgos = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("BotonesMedidores");
+                    botonFE = tablaRiesgo.Find("Empresa1").Find("DescZoneLab").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
+                    zona = tablaRiesgo.Find("Empresa1").Find("DescZoneLab");
+                    botonGuardarF1 = tablaRiesgo.Find("Empresa1").Find("GuardarLab");
 
-            }
-            //Man
-            else if(empresaSeleccionada == 2){
-                tablaFE = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("FichaEmpleados");
-                botonesMedidores = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("Medidores");
-                botonesRiesgos = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("BotonesMedidores");
-                botonFE = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
-                zona = tablaRiesgo.Find("Empresa2").Find("DescZoneMan");
-                botonGuardarF1 = tablaRiesgo.Find("Empresa2").Find("GuardarMan");
-            }
-            //Ofi
-            else if(empresaSeleccionada == 3){
-                tablaFE = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("FichaEmpleados");
-                botonesMedidores = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("Medidores");
-                botonesRiesgos = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("BotonesMedidores");
-                botonFE = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
-                zona = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi");
-                botonGuardarF1 = tablaRiesgo.Find("Empresa3").Find("GuardarOfi");
-            }
-            //Pozo
-            else if(empresaSeleccionada == 4){
-                tablaFE = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("FichaEmpleados");
-                botonesMedidores = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("Medidores");
-                botonesRiesgos = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("BotonesMedidores");
-                botonFE = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
-                zona = tablaRiesgo.Find("Empresa4").Find("DescZonePozo");
-                botonGuardarF1 = tablaRiesgo.Find("Empresa4").Find("GuardarPozo");
-            }
-            //SG
-            else if(empresaSeleccionada == 5){
-                tablaFE = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("FichaEmpleados");
-                botonesMedidores = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("Medidores");
-                botonesRiesgos = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("BotonesMedidores");
-                botonFE = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
-                zona = tablaRiesgo.Find("Empresa5").Find("DescZoneSG");
-                botonGuardarF1 = tablaRiesgo.Find("Empresa5").Find("GuardarSG");
-            }
-            Transform tablaMed = tablaMedidores.transform;
-            for (int i = 0; i < tablaMedidores.transform.GetChildCount(); i++){
-                //0,1,2,5,8,12, 15
-                if(i == 0 || i == 1 || i == 2 || i == 5 || i == 8 || i == 12 || i == 15 ){
-                    /*if(tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChildCount() == 1){
-                        Text textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
-                        datosMatriz[i] = textoCelda.text.ToString();
-                    }
-                    else{*/
-                    InputField textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<InputField>();
-                    if(textoCelda.text == ""){
-                        errorMessage = "Para continuar debes diligenciar toda la información solicitada.";
-                        isFull = false;
-                    }
-                    else{
-                        datosMatriz[i] = textoCelda.text.ToString();
-                    }
-                    //}
                 }
-                else{
-                    Text textoCeldaDrop = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(3).GetComponent<Text>();
-                    if(textoCeldaDrop.text == "- -"){
-                        errorMessage = "Para continuar debes diligenciar toda la información solicitada.";
-                        isFull = false;
-                    }
-                    else{
-                        datosMatriz[i] = textoCeldaDrop.text.ToString();
-                    }
+                //Man
+                else if(empresaSeleccionada == 2){
+                    tablaFE = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("FichaEmpleados");
+                    botonesMedidores = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("Medidores");
+                    botonesRiesgos = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("BotonesMedidores");
+                    botonFE = tablaRiesgo.Find("Empresa2").Find("DescZoneMan").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
+                    zona = tablaRiesgo.Find("Empresa2").Find("DescZoneMan");
+                    botonGuardarF1 = tablaRiesgo.Find("Empresa2").Find("GuardarMan");
                 }
-            }
-            if (!errorMessage.Equals("") && !isFull){
-                        alert.gameObject.SetActive(true);
-                        alertMessage.CreateAlertMessage(errorMessage);                    
-            } 
-            else{
-                llenarDatosObj(areaActual-1);
-                for (int i = 2; i < tablaMedidores.transform.GetChildCount(); i++){
-                    if(i == 0 || i == 1 || i == 2 || i == 5 || i == 8 || i == 12 || i == 15){
+                //Ofi
+                else if(empresaSeleccionada == 3){
+                    tablaFE = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("FichaEmpleados");
+                    botonesMedidores = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("Medidores");
+                    botonesRiesgos = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("BotonesMedidores");
+                    botonFE = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
+                    zona = tablaRiesgo.Find("Empresa3").Find("DescZoneOfi");
+                    botonGuardarF1 = tablaRiesgo.Find("Empresa3").Find("GuardarOfi");
+                }
+                //Pozo
+                else if(empresaSeleccionada == 4){
+                    tablaFE = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("FichaEmpleados");
+                    botonesMedidores = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("Medidores");
+                    botonesRiesgos = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("BotonesMedidores");
+                    botonFE = tablaRiesgo.Find("Empresa4").Find("DescZonePozo").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
+                    zona = tablaRiesgo.Find("Empresa4").Find("DescZonePozo");
+                    botonGuardarF1 = tablaRiesgo.Find("Empresa4").Find("GuardarPozo");
+                }
+                //SG
+                else if(empresaSeleccionada == 5){
+                    tablaFE = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("FichaEmpleados");
+                    botonesMedidores = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("Medidores");
+                    botonesRiesgos = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("BotonesMedidores");
+                    botonFE = tablaRiesgo.Find("Empresa5").Find("DescZoneSG").Find("FichaEmpleados").Find("Buttons").Find("Save").Find("btn");
+                    zona = tablaRiesgo.Find("Empresa5").Find("DescZoneSG");
+                    botonGuardarF1 = tablaRiesgo.Find("Empresa5").Find("GuardarSG");
+                }
+                Transform tablaMed = tablaMedidores.transform;
+                for (int i = 0; i < tablaMedidores.transform.GetChildCount(); i++){
+                    //0,1,2,5,8,12,15
+                    if(i == 0 || i == 1 || i == 2 || i == 5 || i == 8 || i == 12 || i == 15 ){
+                        /*if(tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChildCount() == 1){
+                            Text textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
+                            datosMatriz[i] = textoCelda.text.ToString();
+                        }
+                        else{*/
                         InputField textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<InputField>();
-                        textoCelda.text = "";
+                        if(textoCelda.text == ""){
+                            errorMessage = "Para continuar debes diligenciar toda la información solicitada.";
+                            isFull = false;
+                        }
+                        else{
+                            datosMatriz[i] = textoCelda.text.ToString();
+                        }
+                        //}
                     }
                     else{
                         Text textoCeldaDrop = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(3).GetComponent<Text>();
-                        textoCeldaDrop.text = "- -";
-                        Dropdown dropdown = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<Dropdown>();
-                        dropdown.value = 0;
-
+                        if(textoCeldaDrop.text == "- -"){
+                            errorMessage = "Para continuar debes diligenciar toda la información solicitada.";
+                            isFull = false;
+                        }
+                        else{
+                            datosMatriz[i] = textoCeldaDrop.text.ToString();
+                        }
                     }
-                    /*
-                    if(tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChildCount() == 1){
-                        Text textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
-                        textoCelda.text = "NO";
-                    }
-                    else{
-                        InputField textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<InputField>();
-                        textoCelda.text = "";
-                    }
-                    */
                 }
-                tablaFE.gameObject.SetActive(true);
-                disableChilds(botonesMedidores.gameObject);
-                //Button bFE = botonFE.GetComponent<Button>();
-                //bFE.interactable = false;
-                botonesRiesgos.gameObject.SetActive(false);
-                tablaMedidores.SetActive(false);
-                zona.gameObject.SetActive(false);
-                botonGuardarF1.gameObject.SetActive(false);
-                //toJSONP();
-            } 
+                if (!errorMessage.Equals("") && !isFull){
+                            alert.gameObject.SetActive(true);
+                            alertMessage.CreateAlertMessage(errorMessage);                    
+                } 
+                else{
+                    llenarDatosObj(areaActual-1);
+                    for (int i = 2; i < tablaMedidores.transform.GetChildCount(); i++){
+                        if(i == 0 || i == 1 || i == 2 || i == 5 || i == 8 || i == 12 || i == 15){
+                            InputField textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<InputField>();
+                            textoCelda.text = "";
+                        }
+                        else{
+                            Text textoCeldaDrop = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(3).GetComponent<Text>();
+                            textoCeldaDrop.text = "- -";
+                            Dropdown dropdown = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<Dropdown>();
+                            dropdown.value = 0;
+
+                        }
+                        /*
+                        if(tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChildCount() == 1){
+                            Text textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
+                            textoCelda.text = "NO";
+                        }
+                        else{
+                            InputField textoCelda = tablaMed.GetChild(i).GetChild(1).GetChild(0).GetComponent<InputField>();
+                            textoCelda.text = "";
+                        }
+                        */
+                    }
+                    tablaFE.gameObject.SetActive(true);
+                    disableChilds(botonesMedidores.gameObject);
+                    //Button bFE = botonFE.GetComponent<Button>();
+                    //bFE.interactable = false;
+                    botonesRiesgos.gameObject.SetActive(false);
+                    tablaMedidores.SetActive(false);
+                    zona.gameObject.SetActive(false);
+                    botonGuardarF1.gameObject.SetActive(false);
+                    //toJSONP();
+                } 
+            }
+            else{
+                Debug.Log(" El método 'guardarTablaMedidores' está completo");
+            }
+        }
+        else{
+            Debug.Log("No es necesario guardar datos.");
         }
     }
     public void disableChilds(GameObject papa){
@@ -718,22 +743,27 @@ public class Ficha1Fisicos : MonoBehaviour
             "", false, false, "", false, false, false, false);
             matrizMedidores[7] = m7;
         }
-        listaFinalMedidores.Add(matrizMedidores);
-        empresasCompletadas++;
-        areasEmpCompletas = 0;
-        FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores);
-        Debug.Log(JsonUtility.ToJson(FlowControllerPhysical.data.getListaFinalMedidores()[0]));
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2){
+            listaFinalMedidores.Add(matrizMedidores);
+            empresasCompletadas++;
+            areasEmpCompletas = 0;
+            FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores);
+            Debug.Log("Set 1 Matriz Medidores data");
             FlowControllerPhysical.dataPlayer.data.setMatrizMedidores1emp();
         }
-        else{
+        else if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){
+            listaFinalMedidores.Add(matrizMedidores);
+            empresasCompletadas++;
+            areasEmpCompletas = 0;
+            FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores);
+            Debug.Log("Set 2 Matriz Medidores data");
             FlowControllerPhysical.dataPlayer.data.setMatrizMedidores2emp();
         }
-        
+        Debug.Log("La matriz de la ficha 1 tiene  : " + FlowControllerPhysical.data.getListaFinalMedidores().Count);
         //Debug.Log("Datos Almacenados a la Lista!");
     }
     public void toJSONP(){
-        Debug.Log(JsonUtility.ToJson(matrizMedidores[areaActual-1]));
+        //Debug.Log(JsonUtility.ToJson(matrizMedidores[areaActual-1]));
         //FlowControllerPhysical.printDataPlayer();
     }
 }

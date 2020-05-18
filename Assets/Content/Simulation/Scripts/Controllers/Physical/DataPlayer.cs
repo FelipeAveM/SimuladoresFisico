@@ -23,6 +23,9 @@ public class DataGame : System.Object{
 	public MatrizRiesgosFisico matrizRiesgosFisico;
 	public DataGame(){
 	}
+	public DataGame(List<MatrizMedidores[]> listaFinalMedidores){
+		this.listaFinalMedidores = listaFinalMedidores;
+	}
 
 	public DataGame(List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
 		this.listaFinalMedidores = listaFinalMedidores;

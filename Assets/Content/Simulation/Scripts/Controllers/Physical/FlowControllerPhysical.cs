@@ -26,6 +26,7 @@ public class FlowControllerPhysical : MonoBehaviour {
     }
 
     [System.NonSerialized] public static MatrizMedidores [] matVar = MatrizMedidoresPrueba.matrizDePrueba; 
+    [System.NonSerialized] public static MatrizMedidores [] matVar2 = MatrizMedidoresPrueba2.matrizDePrueba; 
     [System.NonSerialized] public static MatrizRiesgosFisico [] matrizRiesgosFisicoVar = MatrizRiesgosFisicosPrueba.mrfs;
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>(); 
     [System.NonSerialized] public static List<MatrizRiesgosFisico []> matrizFinalRiesgosFisicos = new List<MatrizRiesgosFisico[]>();
@@ -63,15 +64,17 @@ public class FlowControllerPhysical : MonoBehaviour {
         apiController = GetComponent<ApiController>();
         tour = GetComponent<Tour>();
         // Pueba
-        //listaFinalMedidoresPrueba.Add(matVar);
-        //matrizFinalRiesgosFisicos.Add(matrizRiesgosFisicoVar);
+        listaFinalMedidoresPrueba.Add(matVar);
+        //listaFinalMedidoresPrueba.Add(matVar2);
+        matrizFinalRiesgosFisicos.Add(matrizRiesgosFisicoVar);
     }
 
     void Start(){
         tutoMedidores = false;
         checkJSONDataPlayer();
         //Pruebas
-        //dataPlayer.data.setMatrizMedidores1emp();
+        dataPlayer.data.setMatrizMedidores1emp();
+        //dataPlayer.data.setMatrizMedidores2emp();
         //Debug.Log(JsonUtility.ToJson(dataPlayer));
         switch (dataPlayer.getFichaActual()){
             case 0:
@@ -108,6 +111,13 @@ public class FlowControllerPhysical : MonoBehaviour {
                 OpenPanel (index);
                 baseHandWriteIntro.transform.GetComponent<FmodHandWriting>().StartStory(1);
                 break;
+            case 7:
+                //
+                GetReference ();
+                ClosePanels ();
+                ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
+                OpenPanel (index);
+                break;
             default:
                 dataPlayer.setFichaActual(1);
                 business = new int[randomBusiness];
@@ -123,21 +133,33 @@ public class FlowControllerPhysical : MonoBehaviour {
         //Real
         //getSimulatorData();
         //getSimulatorDataPlayer();
-        data = new DataGame();
-        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
+        //data = new DataGame();
+        //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
         
         //Pruebas
-        //data = new DataGame();
-        //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
-        //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 4, data);
+        data = new DataGame();
+        data.setListaFinalMedidores(listaFinalMedidoresPrueba);
+        Debug.Log("Length Lista Final Medidores Prueba: " + data.getListaFinalMedidores().Count);
+        /*for (int i = 0; i < FlowControllerPhysical.data.getListaFinalMedidores().Count; i++){
+            Debug.Log("Matriz: " + i);
+            for (int j = 0; j < FlowControllerPhysical.data.getListaFinalMedidores()[i].Length; j++){
+                Debug.Log(JsonUtility.ToJson(FlowControllerPhysical.data.getListaFinalMedidores()[i][j]));
+            }
+        }*/
+        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 1, data);
         
+    }
+
+    public static void setM2(){
+        listaFinalMedidoresPrueba.Add(matVar2);
+        Debug.Log("Length Lista Final Medidores Prueba: " + data.getListaFinalMedidores().Count);
+        dataPlayer.data.setMatrizMedidores2emp();
     }
     void GetReference(){
 		nextBtn = buttonBar.Find ("Button").Find("btn").GetComponent<Button>();
 		buttonLabel = buttonBar.Find ("Button").Find("btn").Find ("Text").GetComponent<Text> ();
         title = topBar.Find ("Title").GetComponent<Text> ();
 	}
-
     public void OpenPanel(int panelIndex) {
         index = index + 1;
         //dataBuilder.SetIndex(index);
@@ -161,13 +183,11 @@ public class FlowControllerPhysical : MonoBehaviour {
 
         nextBtn.interactable = slides[panelIndex].isActiveNextAction;
 	}
-
 	public void NextSlider(){
         slides[index - 1 ].nextAction.Invoke();
         if(index < slides.Length)
 		    OpenPanel(index);	
-	}
-		
+	}		
 	private void ClosePanels(){
 		foreach(Slides element in slides){
 			foreach(Transform item in element.panels){
@@ -175,7 +195,6 @@ public class FlowControllerPhysical : MonoBehaviour {
 			}
 		}
 	}
-
 	IEnumerator Waiting(int waitingTime, EventDelegate action)
 	{
 		yield return new WaitForSeconds(waitingTime);
@@ -324,6 +343,7 @@ public class FlowControllerPhysical : MonoBehaviour {
 	}
 
     public void updateSimulador(){
+        /*
         Debug.Log("Update Simulador");
         //data = new DataGame(listaFinalMedidoresPrueba, matrizFinalRiesgosFisicos);
         string request = JsonUtility.ToJson(dataPlayer);
@@ -331,6 +351,7 @@ public class FlowControllerPhysical : MonoBehaviour {
         print(request);
         #endif
         //apiController.POST(apiController.UrlBase, "update/simulator", request, OnCompleted, OnError);   
+        */
     }
 
     public void getSimulatorData(){

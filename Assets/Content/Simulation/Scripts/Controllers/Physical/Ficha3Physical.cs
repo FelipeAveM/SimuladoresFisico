@@ -10,20 +10,32 @@ public class Ficha3Physical : MonoBehaviour {
 	public Transform alert;
     public static List<int []> controlesIndex = new List<int[]>();
     public static bool canPassF4 = false;
-    public static MatrizMedidores [] matVar;
-    public static List<MatrizMedidores[]> listaFinalMedidores3 = new List<MatrizMedidores[]>();
-    public static List<MatrizMedidores[]> listaFinalMedidores3b = new List<MatrizMedidores[]>();
+    [System.NonSerialized] public static MatrizMedidores [] matVar;
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3 = new List<MatrizMedidores[]>();
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3b = new List<MatrizMedidores[]>();
     public void Start(){
 		alertMessage = alert.GetComponent<AlertMessage>();
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2) FlowControllerPhysical.dataPlayer.setFichaActual(3);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6) FlowControllerPhysical.dataPlayer.setFichaActual(7);
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3) matVar = FlowControllerPhysical.data.getListaFinalMedidores()[0];
-        else matVar = FlowControllerPhysical.data.getListaFinalMedidores()[1];
+        Debug.Log("Ficha 3 Ficha Actual: " +FlowControllerPhysical.dataPlayer.getFichaActual());
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3){
+            Debug.Log("primer if matVar");
+            matVar = FlowControllerPhysical.data.getListaFinalMedidores()[0];
+        } 
+        else {
+            
+            Debug.Log("Longitud de ListaFinalMedidores hasta ficha3_2: " + FlowControllerPhysical.data.getListaFinalMedidores().Count);
+            matVar = FlowControllerPhysical.data.getListaFinalMedidores()[1];
+            
+            //Prueba
+            //matVar = MatrizMedidoresPrueba2.matrizDePrueba;
+        }
         LoadInfo();
     }
     public void StarForcedF3(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() > 3){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){
            Debug.Log("Start F3 Forced");
+           matVar = null;
            Start();
        } 
     }
