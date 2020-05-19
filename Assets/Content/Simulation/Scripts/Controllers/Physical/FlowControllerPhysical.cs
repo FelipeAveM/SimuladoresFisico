@@ -64,16 +64,16 @@ public class FlowControllerPhysical : MonoBehaviour {
         apiController = GetComponent<ApiController>();
         tour = GetComponent<Tour>();
         // Pueba
-        listaFinalMedidoresPrueba.Add(matVar);
+        //listaFinalMedidoresPrueba.Add(matVar);
         //listaFinalMedidoresPrueba.Add(matVar2);
-        matrizFinalRiesgosFisicos.Add(matrizRiesgosFisicoVar);
+        //matrizFinalRiesgosFisicos.Add(matrizRiesgosFisicoVar);
     }
 
     void Start(){
         tutoMedidores = false;
         checkJSONDataPlayer();
         //Pruebas
-        dataPlayer.data.setMatrizMedidores1emp();
+        //dataPlayer.data.setMatrizMedidores1emp();
         //dataPlayer.data.setMatrizMedidores2emp();
         //Debug.Log(JsonUtility.ToJson(dataPlayer));
         switch (dataPlayer.getFichaActual()){
@@ -133,20 +133,20 @@ public class FlowControllerPhysical : MonoBehaviour {
         //Real
         //getSimulatorData();
         //getSimulatorDataPlayer();
-        //data = new DataGame();
-        //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
+        data = new DataGame();
+        dataPlayer = new DataPlayer("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
         
         //Pruebas
-        data = new DataGame();
-        data.setListaFinalMedidores(listaFinalMedidoresPrueba);
-        Debug.Log("Length Lista Final Medidores Prueba: " + data.getListaFinalMedidores().Count);
+        //data = new DataGame();
+        //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
+        //Debug.Log("Length Lista Final Medidores Prueba: " + data.getListaFinalMedidores().Count);
         /*for (int i = 0; i < FlowControllerPhysical.data.getListaFinalMedidores().Count; i++){
             Debug.Log("Matriz: " + i);
             for (int j = 0; j < FlowControllerPhysical.data.getListaFinalMedidores()[i].Length; j++){
                 Debug.Log(JsonUtility.ToJson(FlowControllerPhysical.data.getListaFinalMedidores()[i][j]));
             }
         }*/
-        dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 1, data);
+        //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 1, data);
         
     }
 

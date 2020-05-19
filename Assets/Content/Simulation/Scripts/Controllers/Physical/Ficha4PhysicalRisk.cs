@@ -153,14 +153,14 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
                 textoV.text = "";
                 textoW.text = ""; 
                 Text textoDescr = tablaFicha4.GetChild(i).GetChild(2).GetChild(j).GetChild(0).Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoDc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoQc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellq").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoRc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoSc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoTc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoUc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoVc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoWc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Placeholder").GetComponent<Text>();               
+                Text textoDc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoQc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoRc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoSc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoTc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoUc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoVc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoWc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Text").GetComponent<Text>();               
                 textoDescr.text = "";
                 textoDc.text = "";
                 textoQc.text = "";
@@ -502,14 +502,14 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
         for (int i = 0; i < tablaPrincipal.GetChildCount(); i++){
             for (int j = 0; j < tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChildCount(); j++){
                 if(tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).gameObject.active){
-                    Text textoD = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoQ = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellq").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoR = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoS = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoT = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoU = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoV = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Placeholder").GetComponent<Text>();
-                    Text textoW = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Placeholder").GetComponent<Text>();
+                    Text textoD = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoQ = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoR = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoS = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoT = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoU = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoV = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Text").GetComponent<Text>();
+                    Text textoW = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Text").GetComponent<Text>();
                     Text textoI = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celli").Find("Value").Find("Placeholder").GetComponent<Text>();
                     Text textoM = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellm").Find("Value").Find("Placeholder").GetComponent<Text>();
                     Text textoO = tablaPrincipal.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cello").Find("Value").Find("Placeholder").GetComponent<Text>();
@@ -773,8 +773,7 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
         else{
             Debug.Log("Tabla llena");
             guardarMatriz();
-            resetFillSpaces();
-            resetFicha4();
+            if(FlowControllerPhysical.dataPlayer.getFichaActual() == 4) resetFillSpaces();
             toIntro = true;
             Debug.Log("Va a imprimir matriz final de riesgos físicos");
             for (int i = 0; i < matrizFinalRiesgosFisicos[0].Length; i++){
@@ -904,14 +903,14 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
                 textoV.text = "";
                 textoW.text = ""; 
                 Text textoDescr = tablaFicha4.GetChild(i).GetChild(2).GetChild(j).GetChild(0).Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoDc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoQc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellq").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoRc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoSc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoTc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoUc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoVc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Placeholder").GetComponent<Text>();
-                Text textoWc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Placeholder").GetComponent<Text>();               
+                Text textoDc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoQc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("celld").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoRc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellr").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoSc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cells").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoTc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellt").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoUc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellu").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoVc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellv").Find("Value").Find("Text").GetComponent<Text>();
+                Text textoWc = tablaFicha4.GetChild(i).Find("CellDescripciones").GetChild(j).Find("cellw").Find("Value").Find("Text").GetComponent<Text>();               
                 textoDescr.text = "";
                 textoDc.text = "";
                 textoQc.text = "";
