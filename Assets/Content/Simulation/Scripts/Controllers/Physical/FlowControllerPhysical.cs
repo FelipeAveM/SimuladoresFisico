@@ -25,12 +25,20 @@ public class FlowControllerPhysical : MonoBehaviour {
 
     }
 
-    [System.NonSerialized] public static MatrizMedidores [] matVar = MatrizMedidoresPrueba.matrizDePrueba; 
-    [System.NonSerialized] public static MatrizMedidores [] matVar2 = MatrizMedidoresPrueba2.matrizDePrueba; 
-    [System.NonSerialized] public static MatrizRiesgosFisico [] matrizRiesgosFisicoVar = MatrizRiesgosFisicosPrueba.mrfs;
-    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>(); 
-    [System.NonSerialized] public static List<MatrizRiesgosFisico []> matrizFinalRiesgosFisicos = new List<MatrizRiesgosFisico[]>();
-    [System.NonSerialized] public static DataGame data;
+    //[System.NonSerialized] 
+    public static MatrizMedidores [] matVar = MatrizMedidoresPrueba.matrizDePrueba; 
+    //[System.NonSerialized] 
+    public static MatrizMedidores [] matVar2 = MatrizMedidoresPrueba2.matrizDePrueba; 
+    //[System.NonSerialized] 
+    public static MatrizRiesgosFisico [] matrizRiesgosFisicoVar = MatrizRiesgosFisicosPrueba.mrfs;
+    //[System.NonSerialized] 
+    public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>(); 
+    //[System.NonSerialized] 
+    public static List<MatrizRiesgosFisico []> matrizFinalRiesgosFisicos = new List<MatrizRiesgosFisico[]>();
+    //[System.NonSerialized] 
+    public static DataGame data;
+    //[System.NonSerialized] 
+    DataJSON dataJSONEx;
 	public Slides[] slides;
 	public int index = 0;
 	public Transform topBar;
@@ -131,11 +139,11 @@ public class FlowControllerPhysical : MonoBehaviour {
 
     void checkJSONDataPlayer(){
         //Real
-        //getSimulatorData();
-        //getSimulatorDataPlayer();
+        getSimulatorData();
+        getSimulatorDataPlayer();
+        dataJSONEx = new DataJSON();
         data = new DataGame();
         dataPlayer = new DataPlayer("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
-        
         //Pruebas
         //data = new DataGame();
         //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
@@ -343,15 +351,20 @@ public class FlowControllerPhysical : MonoBehaviour {
 	}
 
     public void updateSimulador(){
-        /*
         Debug.Log("Update Simulador");
-        //data = new DataGame(listaFinalMedidoresPrueba, matrizFinalRiesgosFisicos);
+        Debug.Log("Ficha Actual dataPlayer: " + dataPlayer.getFichaActual() + " Empresa 1: " + dataPlayer.getEmp1() + " Empresa 2:" + dataPlayer.getEmp2());
+        data.setFichaActual(dataPlayer.getFichaActual()); 
+        data.setEmp1(dataPlayer.getEmp1()); 
+        data.setEmp2(dataPlayer.getEmp2());
+        Debug.Log("Ficha Actual data: " + data.getFichaActual() + " Empresa 1: " + data.getEmp1() + " Empresa 2:" + data.getEmp2());
+        data.setListaFinalMedidores(listaFinalMedidoresPrueba);
+        data.setMatrizFinalRiesgosFisicos(matrizFinalRiesgosFisicos);
+        dataPlayer.setDataGame(data);
         string request = JsonUtility.ToJson(dataPlayer);
         #if UNITY_EDITOR
         print(request);
         #endif
-        //apiController.POST(apiController.UrlBase, "update/simulator", request, OnCompleted, OnError);   
-        */
+        apiController.POST(apiController.UrlBase, "update/simulator", request, OnCompletedEx, OnError);   
     }
 
     public void getSimulatorData(){
@@ -360,7 +373,7 @@ public class FlowControllerPhysical : MonoBehaviour {
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador", request, OnCompleted, OnError);   
+        apiController.GETJSON(apiController.UrlBase, "get/simulador", request, catchPlayer, OnError);   
     } 
 
     public void getSimulatorDataPlayer(){
@@ -369,22 +382,37 @@ public class FlowControllerPhysical : MonoBehaviour {
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, OnCompleted, OnError);   
+        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, catchDataSim, OnError);   
     }    
 
-    public void catchPlayer(string player){
+    public void catchPlayer(WWW response){
+        String player = response.text;
         Debug.Log(player);
-        string data = JsonUtility.ToJson(player);
+        JsonUtility.FromJsonOverwrite(player, dataJSONEx);
+        Debug.Log(JsonUtility.ToJson(dataJSONEx));
+    }
+
+    public void catchDataSim(WWW response){
+        String dataSimPlayer = response.text.Replace(@"\", "").TrimStart('"').TrimEnd('"');
+        Debug.Log(dataSimPlayer);
+        DataGame dataGameJSONEx = new DataGame();
+        JsonUtility.FromJsonOverwrite(dataSimPlayer, dataGameJSONEx);
+        Debug.Log(JsonUtility.ToJson(dataGameJSONEx));
+    }
+
+    public void OnCompletedEx(WWW response){
+        Debug.Log("OnCompletedEx works!");
     }
 
 	public void OnCompleted(WWW response){
         //print("INICIO DE INFORME");
         String dataPlayerJsonGet = JsonUtility.ToJson(response);
-        Debug.Log(dataPlayerJsonGet);
-        print(JsonUtility.ToJson(response));
+        //Debug.Log(dataPlayerJsonGet);
+        //print(JsonUtility.ToJson(response));
+        print(response);
         print(response.text);
         string playerResponse = response.text;
-        catchPlayer(playerResponse);
+        //catchPlayer(playerResponse);
         //PdfInfo pdfInfo = JsonUtility.FromJson<PdfInfo>(response.text);
         //Información del informe para guardado en la API
         if (index >= slides.Length - 1)

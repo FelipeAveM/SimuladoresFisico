@@ -7,18 +7,21 @@ using UnityEngine.Serialization;
 public class DataGame : System.Object{
 
 	[SerializeField]
+	public int fichaActual; 
+	[SerializeField]
+    public int emp1;
+    [SerializeField]
+    public int emp2;
+	[SerializeField]
     public List<MatrizMedidores[]> listaFinalMedidores;
 	[SerializeField]
 	public List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos;
-
 	[SerializeField]
 	public MatrizMedidores matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
 	matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8;
-	
 	[SerializeField]
 	public MatrizMedidores matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
 	matrizMedidoresEmp2_5, matrizMedidoresEmp2_6, matrizMedidoresEmp2_7, matrizMedidoresEmp2_8;
-
 	[SerializeField]
 	public MatrizRiesgosFisico matrizRiesgosFisico;
 	public DataGame(){
@@ -26,6 +29,14 @@ public class DataGame : System.Object{
 	public DataGame(List<MatrizMedidores[]> listaFinalMedidores){
 		this.listaFinalMedidores = listaFinalMedidores;
 	}
+
+	public DataGame(int fichaActual, int emp1, int emp2, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
+		this.fichaActual = fichaActual;
+		this.emp1 = emp1;
+		this.emp2 = emp2;
+		this.listaFinalMedidores = listaFinalMedidores;
+		this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
+    }
 
 	public DataGame(List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
 		this.listaFinalMedidores = listaFinalMedidores;
@@ -68,6 +79,29 @@ public class DataGame : System.Object{
 		matrizMedidoresEmp2_7 = listaFinalMedidores[1][6];
 		matrizMedidoresEmp2_8 = listaFinalMedidores[1][7];
 	}
+
+	public int getFichaActual() {
+		return this.fichaActual;
+	}
+
+	public void setFichaActual(int fichaActual) {
+		this.fichaActual = fichaActual;
+	}
+
+	public int getEmp1() {
+		return this.emp1;
+	}
+
+	public void setEmp1(int emp1) {
+		this.emp1 = emp1;
+	}
+	public int getEmp2() {
+		return this.emp2;
+	}
+
+	public void setEmp2(int emp2) {
+		this.emp2 = emp2;
+	}
 }
 
 [System.Serializable]
@@ -104,6 +138,10 @@ public class DataPlayer : System.Object{
 	[SerializeField]
 	public DataGame data;
 
+	public DataPlayer(){
+		
+	}
+
 	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
 		, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
         this.user_id = user_id;
@@ -117,6 +155,23 @@ public class DataPlayer : System.Object{
 		this.emp1 = emp1;
 		this.emp2 = emp2;
 		this.data = data;
+		//this.listaFinalMedidores = listaFinalMedidores;
+		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
+    }
+
+	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
+		){//, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
+        this.user_id = user_id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.grupo = grupo;
+        this.sub_grupo = sub_grupo;
+        this.is_groupal = is_groupal;
+        this.fichaActual = fichaActual;
+		this.emp1 = emp1;
+		this.emp2 = emp2;
+		//this.data = data;
 		//this.listaFinalMedidores = listaFinalMedidores;
 		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }

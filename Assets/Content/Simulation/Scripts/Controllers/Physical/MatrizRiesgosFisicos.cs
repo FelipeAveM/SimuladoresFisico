@@ -305,7 +305,7 @@ public class MatrizRiesgosFisico : System.Object{
 public class DatosPruebaUsuario : System.Object{
 
     [SerializeField]
-    public string user_id = "mfavendano";
+    public string user_id = "usuarioPoli";
     [SerializeField]
     public string grupo = "Fisico";
 	[SerializeField]
@@ -314,4 +314,5 @@ public class DatosPruebaUsuario : System.Object{
     public bool is_groupal = false;
     [SerializeField]
     public bool is_finished = false;
+
 }
