@@ -30,7 +30,9 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
     public void Start(){
         //Pruebas
         //matRiesgo = Ficha3Physical.listaFinalMedidores3[0];
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3){
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3 
+            //Prueba
+            || FlowControllerPhysical.dataPlayer.getFichaActual() == 4){
             matRiesgo = Ficha3Physical.listaFinalMedidores3[0];
         }
         else{
@@ -55,7 +57,7 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
         LoadInfo();
     }
     public void StarForcedF4(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 7){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 7 && !Ficha1Fisicos.cargaEmp1){
            Debug.Log("Start F4 Forced");
            resetFillSpaces();
            resetFicha4();
@@ -752,9 +754,13 @@ public class Ficha4PhysicalRisk : MonoBehaviour {
                 matrizRiesgosFisico2[i] = matrizRiesgosFisico[i];
             }
             matrizFinalRiesgosFisicos.Add(matrizRiesgosFisico2);
+            FlowControllerPhysical.data.setMatrizFinalRiesgosFisicos(matrizFinalRiesgosFisicos);
+            FlowControllerPhysical.data.setMatrizRiesgos2emp();
         }
         else{
             matrizFinalRiesgosFisicos.Add(matrizRiesgosFisico);
+            FlowControllerPhysical.data.setMatrizFinalRiesgosFisicos(matrizFinalRiesgosFisicos);
+            FlowControllerPhysical.data.setMatrizRiesgos1emp();
         }
 
 

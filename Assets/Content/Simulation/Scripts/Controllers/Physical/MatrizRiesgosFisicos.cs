@@ -311,7 +311,7 @@ public class DatosPruebaUsuario : System.Object{
 	[SerializeField]
     public string sub_grupo = "Laboratorio";
     [SerializeField]
-    public bool is_groupal = false;
+    public bool is_groupal = true;
     [SerializeField]
     public bool is_finished = false;
 

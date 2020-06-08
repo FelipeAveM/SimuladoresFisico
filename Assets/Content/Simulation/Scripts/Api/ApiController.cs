@@ -173,9 +173,13 @@ public class ApiController : MonoBehaviour {
 
         WWW www = new WWW(url, postData, headers);
         StartCoroutine(WaitForRequest(www, onComplete, onError));
+        //StartCoroutine(DoLast());
         return www;
     }
-
+    private IEnumerator DoLast() {
+        bool inFirst = true;
+        while(inFirst) yield return new WaitForSeconds(0.1f);
+    }
     private IEnumerator WaitForRequest(WWW www, System.Action<WWW> onComplete, System.Action<string> onError)
     {
         yield return www;
@@ -189,6 +193,7 @@ public class ApiController : MonoBehaviour {
         {
             onComplete(www);
         }
+        
     }
 
     public void OpenUrlInWeb(string url)

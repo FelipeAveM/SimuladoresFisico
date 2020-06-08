@@ -25,20 +25,22 @@ public class FlowControllerPhysical : MonoBehaviour {
 
     }
 
-    //[System.NonSerialized] 
+    [System.NonSerialized] 
     public static MatrizMedidores [] matVar = MatrizMedidoresPrueba.matrizDePrueba; 
-    //[System.NonSerialized] 
+    [System.NonSerialized] 
     public static MatrizMedidores [] matVar2 = MatrizMedidoresPrueba2.matrizDePrueba; 
-    //[System.NonSerialized] 
+    [System.NonSerialized] 
     public static MatrizRiesgosFisico [] matrizRiesgosFisicoVar = MatrizRiesgosFisicosPrueba.mrfs;
-    //[System.NonSerialized] 
+    [System.NonSerialized] 
     public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>(); 
-    //[System.NonSerialized] 
+    [System.NonSerialized] 
     public static List<MatrizRiesgosFisico []> matrizFinalRiesgosFisicos = new List<MatrizRiesgosFisico[]>();
-    //[System.NonSerialized] 
-    public static DataGame data;
-    //[System.NonSerialized] 
-    DataJSON dataJSONEx;
+    [System.NonSerialized] 
+    public static DataPlayer dataPlayer = new DataPlayer();
+    [System.NonSerialized] 
+    public static DataGame data = new DataGame();
+    [System.NonSerialized] 
+    public static DataJSON dataJSONEx = new DataJSON();
 	public Slides[] slides;
 	public int index = 0;
 	public Transform topBar;
@@ -65,12 +67,14 @@ public class FlowControllerPhysical : MonoBehaviour {
     public int randomBusiness = 2;
     public int zonasTerminadas = 0;
     public bool tutoMedidores;
-    public static DataPlayer dataPlayer;
+    
 
     void Awake(){
         dataBuilder = GetComponent<DataBuilderPhysical>();
         apiController = GetComponent<ApiController>();
         tour = GetComponent<Tour>();
+        getSimulatorData();
+        getSimulatorDataPlayer();
         // Pueba
         //listaFinalMedidoresPrueba.Add(matVar);
         //listaFinalMedidoresPrueba.Add(matVar2);
@@ -79,12 +83,16 @@ public class FlowControllerPhysical : MonoBehaviour {
 
     void Start(){
         tutoMedidores = false;
-        checkJSONDataPlayer();
+        StartCoroutine(Spawn());
         //Pruebas
         //dataPlayer.data.setMatrizMedidores1emp();
         //dataPlayer.data.setMatrizMedidores2emp();
         //Debug.Log(JsonUtility.ToJson(dataPlayer));
-        switch (dataPlayer.getFichaActual()){
+    }
+
+    public void initialConditions(){
+        Debug.Log(data.getFichaActual());
+        switch (data.getFichaActual()){
             case 0:
                 //Nuevo
                 dataPlayer.setFichaActual(1);
@@ -94,38 +102,28 @@ public class FlowControllerPhysical : MonoBehaviour {
                 ChooseBusiness();
                 OpenPanel (index);
                 break;
-            case 1:
+            case 1: case 2: case 3: case 4:
                 GetReference ();
                 ClosePanels ();
                 ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
                 OpenPanel (index);
                 break;
-            case 2:
+            case 5: case 6: case 7:
+                Ficha1Fisicos.cargaEmp1 = true;
                 GetReference ();
                 ClosePanels ();
-                ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
-                OpenPanel (index);
-                break;
-            case 3:
-                GetReference ();
-                ClosePanels ();
-                ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
-                OpenPanel (index);
-                break;
-            case 5:
-                GetReference ();
-                ClosePanels ();
-                ChooseBusines3(dataPlayer.getEmp1(), dataPlayer.getEmp2());
+                ChooseBusines3(dataPlayer.getEmp2(), dataPlayer.getEmp1());
                 OpenPanel (index);
                 baseHandWriteIntro.transform.GetComponent<FmodHandWriting>().StartStory(1);
-                break;
-            case 7:
+                break;            
+                /*case 7:
                 //
                 GetReference ();
                 ClosePanels ();
                 ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
                 OpenPanel (index);
                 break;
+                */
             default:
                 dataPlayer.setFichaActual(1);
                 business = new int[randomBusiness];
@@ -135,15 +133,15 @@ public class FlowControllerPhysical : MonoBehaviour {
                 OpenPanel (index);
                 break;
         }
-	}
-
+    }
+    IEnumerator Spawn() {
+        yield return null;
+        initialConditions();
+    }
     void checkJSONDataPlayer(){
         //Real
-        getSimulatorData();
-        getSimulatorDataPlayer();
-        dataJSONEx = new DataJSON();
-        data = new DataGame();
-        dataPlayer = new DataPlayer("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
+        //data = new DataGame();
+        dataPlayer.setData("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
         //Pruebas
         //data = new DataGame();
         //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
@@ -156,12 +154,6 @@ public class FlowControllerPhysical : MonoBehaviour {
         }*/
         //dataPlayer = new DataPlayer("mfavendano","Felipe","Avendaño","mfavendano@poligran.edu.co","Fisico","Laboratorio", false, 3, 0, 1, data);
         
-    }
-
-    public static void setM2(){
-        listaFinalMedidoresPrueba.Add(matVar2);
-        Debug.Log("Length Lista Final Medidores Prueba: " + data.getListaFinalMedidores().Count);
-        dataPlayer.data.setMatrizMedidores2emp();
     }
     void GetReference(){
 		nextBtn = buttonBar.Find ("Button").Find("btn").GetComponent<Button>();
@@ -208,7 +200,6 @@ public class FlowControllerPhysical : MonoBehaviour {
 		yield return new WaitForSeconds(waitingTime);
 		action ();
 	}
-
     MouseAction GetMouseAction(Transform item)
     {
         MouseAction mouseAction;
@@ -222,7 +213,6 @@ public class FlowControllerPhysical : MonoBehaviour {
         }
         return mouseAction;
     }
-
 	public void ActiveBusinessMouseAction(bool enable){
         foreach (Transform item in businessParent){
 			if (item.gameObject.activeSelf) {
@@ -234,11 +224,9 @@ public class FlowControllerPhysical : MonoBehaviour {
 			}
 		}
 	}
-
     public int GetActiveBusiness() {
         return activeBusiness;
     }
-
     private static int[] UniqueRandomNumbers(int min, int max, int howMany){
 
         int[] myNumbers = new int[howMany];
@@ -263,7 +251,6 @@ public class FlowControllerPhysical : MonoBehaviour {
 
         return myNumbers;
     }
-
     public void ChooseBusines3(int index, int j){
 		//ASEGURAR QUE ESTÁN ESCONDIDOS
 		for(int i=0; i<businessParent.childCount; i++){
@@ -274,7 +261,6 @@ public class FlowControllerPhysical : MonoBehaviour {
         businessParent.GetChild(j).gameObject.SetActive(true);
         businessParent.GetChild(j).GetComponent<Button>().interactable = true;
     }
-
     public void ChooseBusines2(int index, int j){
 		//ASEGURAR QUE ESTÁN ESCONDIDOS
 		for(int i=0; i<businessParent.childCount; i++){
@@ -308,7 +294,6 @@ public class FlowControllerPhysical : MonoBehaviour {
 		}
         */
     }
-
     public void ActivateBusiness() {
         //ChooseBusiness();
         int contN = 0;
@@ -332,7 +317,6 @@ public class FlowControllerPhysical : MonoBehaviour {
             riesgoActivo++;
         }
     }
-
     public void DowloadResult(int endPoint){
         switch(endPoint){
             case 1:
@@ -349,7 +333,6 @@ public class FlowControllerPhysical : MonoBehaviour {
            
         }
 	}
-
     public void updateSimulador(){
         Debug.Log("Update Simulador");
         Debug.Log("Ficha Actual dataPlayer: " + dataPlayer.getFichaActual() + " Empresa 1: " + dataPlayer.getEmp1() + " Empresa 2:" + dataPlayer.getEmp2());
@@ -366,44 +349,61 @@ public class FlowControllerPhysical : MonoBehaviour {
         #endif
         apiController.POST(apiController.UrlBase, "update/simulator", request, OnCompletedEx, OnError);   
     }
-
     public void getSimulatorData(){
         DatosPruebaUsuario datosPruebaUsuario = new DatosPruebaUsuario();
         string request = JsonUtility.ToJson(datosPruebaUsuario);       
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador", request, catchPlayer, OnError);   
+        apiController.GETJSON(apiController.UrlBase, "get/simulador", request, catchPlayer, OnError);  
     } 
-
     public void getSimulatorDataPlayer(){
         DatosPruebaUsuario datosPruebaUsuario = new DatosPruebaUsuario();
         string request = JsonUtility.ToJson(datosPruebaUsuario);       
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, catchDataSim, OnError);   
+        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, catchDataSim, OnError);
     }    
-
     public void catchPlayer(WWW response){
         String player = response.text;
-        Debug.Log(player);
+        //Debug.Log(player);
         JsonUtility.FromJsonOverwrite(player, dataJSONEx);
-        Debug.Log(JsonUtility.ToJson(dataJSONEx));
+        //Debug.Log(JsonUtility.ToJson(dataJSONEx));
     }
-
     public void catchDataSim(WWW response){
         String dataSimPlayer = response.text.Replace(@"\", "").TrimStart('"').TrimEnd('"');
-        Debug.Log(dataSimPlayer);
+        //Debug.Log(dataSimPlayer);
         DataGame dataGameJSONEx = new DataGame();
         JsonUtility.FromJsonOverwrite(dataSimPlayer, dataGameJSONEx);
-        Debug.Log(JsonUtility.ToJson(dataGameJSONEx));
+        //Debug.Log(JsonUtility.ToJson(dataGameJSONEx));
+        if(dataGameJSONEx.fichaActual >= 1){
+            JsonUtility.FromJsonOverwrite(dataSimPlayer, data);
+            //Debug.Log(JsonUtility.ToJson(data));
+            dataPlayer.setData1("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", true);
+            dataPlayer.setFichaActual(data.getFichaActual());
+            dataPlayer.setEmp1(data.emp1);
+            dataPlayer.setEmp2(data.emp2);
+            Debug.Log(JsonUtility.ToJson(data));
+            Debug.Log(JsonUtility.ToJson(data.matrizMedidoresEmp1_1));
+            //Debug.Log(dataPlayer.fichaActual + "----" + dataPlayer.emp1 + "-----" + dataPlayer.emp2);
+            //Debug.Log(dataPlayer.getFichaActual() + "----" + dataPlayer.getEmp1() + "-----" + dataPlayer.getEmp2());
+        }
+        else{
+            Debug.Log("Entrará a checkJSONDataPlayer()");
+            checkJSONDataPlayer();
+        }
+        if(data.getFichaActual() > 6){
+            data.setMM2();
+            data.setMR1();
+        }
+        else if(data.getFichaActual() > 2) data.setMM1();
+        if(data.getFichaActual() == 8) data.setMR2();
+        Debug.Log(dataPlayer.fichaActual + "----" + dataPlayer.emp1 + "-----" + dataPlayer.emp2);
     }
-
-    public void OnCompletedEx(WWW response){
-        Debug.Log("OnCompletedEx works!");
+	public void OnCompletedEx(WWW response){
+        Debug.Log(response.text);
     }
-
 	public void OnCompleted(WWW response){
         //print("INICIO DE INFORME");
         String dataPlayerJsonGet = JsonUtility.ToJson(response);
@@ -437,15 +437,12 @@ public class FlowControllerPhysical : MonoBehaviour {
             postOk.Invoke();
         }
 	}
-
 	public void OnDBCompleted(WWW response){
 		print("POST OK");
 	}
-
 	public void OnError(string error){
 		print (error);
 	}
-
     public void disableKids(GameObject papa){
         int sons = papa.transform.childCount;
         for (int i = 0; i < sons; i++){
@@ -453,7 +450,9 @@ public class FlowControllerPhysical : MonoBehaviour {
         }
     }
     public void checkZonas(){
+        Debug.Log(Ficha1Fisicos.areasEmpCompletas);
         if(Ficha1Fisicos.areasEmpCompletas > 7){
+            Debug.Log("Zonas Completas");
             Ficha1Fisicos.addToBigM();
             baseHandWrite.StartStory(9);
         }

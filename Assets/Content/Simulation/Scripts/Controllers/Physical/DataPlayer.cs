@@ -13,9 +13,9 @@ public class DataGame : System.Object{
     [SerializeField]
     public int emp2;
 	[SerializeField]
-    public List<MatrizMedidores[]> listaFinalMedidores;
+    public List<MatrizMedidores[]> listaFinalMedidores = new List<MatrizMedidores[]>();
 	[SerializeField]
-	public List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos;
+	public List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos = new List<MatrizRiesgosFisico[]>();
 	[SerializeField]
 	public MatrizMedidores matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
 	matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8;
@@ -23,13 +23,29 @@ public class DataGame : System.Object{
 	public MatrizMedidores matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
 	matrizMedidoresEmp2_5, matrizMedidoresEmp2_6, matrizMedidoresEmp2_7, matrizMedidoresEmp2_8;
 	[SerializeField]
-	public MatrizRiesgosFisico matrizRiesgosFisico;
+	public static MatrizRiesgosFisico matrizRiesgosFisico1_1, matrizRiesgosFisico1_2, matrizRiesgosFisico1_3, matrizRiesgosFisico1_4, matrizRiesgosFisico1_5, matrizRiesgosFisico1_6, matrizRiesgosFisico1_7, matrizRiesgosFisico1_8, matrizRiesgosFisico1_9, matrizRiesgosFisico1_10, 
+	matrizRiesgosFisico1_11, matrizRiesgosFisico1_12, matrizRiesgosFisico1_13, matrizRiesgosFisico1_14, matrizRiesgosFisico1_15, matrizRiesgosFisico1_16, matrizRiesgosFisico1_17, matrizRiesgosFisico1_18, matrizRiesgosFisico1_19, matrizRiesgosFisico1_20, 
+	matrizRiesgosFisico1_21, matrizRiesgosFisico1_22, matrizRiesgosFisico1_23, matrizRiesgosFisico1_24, matrizRiesgosFisico1_25, matrizRiesgosFisico1_26, matrizRiesgosFisico1_27, matrizRiesgosFisico1_28, matrizRiesgosFisico1_29, matrizRiesgosFisico1_30, 
+	matrizRiesgosFisico1_31, matrizRiesgosFisico1_32, matrizRiesgosFisico1_33, matrizRiesgosFisico1_34, matrizRiesgosFisico1_35, matrizRiesgosFisico1_36, matrizRiesgosFisico1_37, matrizRiesgosFisico1_38, matrizRiesgosFisico1_39, matrizRiesgosFisico1_40;
+	[SerializeField]
+	public static MatrizRiesgosFisico matrizRiesgosFisico2_1, matrizRiesgosFisico2_2, matrizRiesgosFisico2_3, matrizRiesgosFisico2_4, matrizRiesgosFisico2_5, matrizRiesgosFisico2_6, matrizRiesgosFisico2_7, matrizRiesgosFisico2_8, matrizRiesgosFisico2_9, matrizRiesgosFisico2_10, 
+	matrizRiesgosFisico2_11, matrizRiesgosFisico2_12, matrizRiesgosFisico2_13, matrizRiesgosFisico2_14, matrizRiesgosFisico2_15, matrizRiesgosFisico2_16, matrizRiesgosFisico2_17, matrizRiesgosFisico2_18, matrizRiesgosFisico2_19, matrizRiesgosFisico2_20, 
+	matrizRiesgosFisico2_21, matrizRiesgosFisico2_22, matrizRiesgosFisico2_23, matrizRiesgosFisico2_24, matrizRiesgosFisico2_25, matrizRiesgosFisico2_26, matrizRiesgosFisico2_27, matrizRiesgosFisico2_28, matrizRiesgosFisico2_29, matrizRiesgosFisico2_30, 
+	matrizRiesgosFisico2_31, matrizRiesgosFisico2_32, matrizRiesgosFisico2_33, matrizRiesgosFisico2_34, matrizRiesgosFisico2_35, matrizRiesgosFisico2_36, matrizRiesgosFisico2_37, matrizRiesgosFisico2_38, matrizRiesgosFisico2_39, matrizRiesgosFisico2_40;
+	public MatrizRiesgosFisico[] matrizRiesgosFisico1 = {matrizRiesgosFisico1_1, matrizRiesgosFisico1_2, matrizRiesgosFisico1_3, matrizRiesgosFisico1_4, matrizRiesgosFisico1_5, matrizRiesgosFisico1_6, matrizRiesgosFisico1_7, matrizRiesgosFisico1_8, matrizRiesgosFisico1_9, matrizRiesgosFisico1_10, 
+	matrizRiesgosFisico1_11, matrizRiesgosFisico1_12, matrizRiesgosFisico1_13, matrizRiesgosFisico1_14, matrizRiesgosFisico1_15, matrizRiesgosFisico1_16, matrizRiesgosFisico1_17, matrizRiesgosFisico1_18, matrizRiesgosFisico1_19, matrizRiesgosFisico1_20, 
+	matrizRiesgosFisico1_21, matrizRiesgosFisico1_22, matrizRiesgosFisico1_23, matrizRiesgosFisico1_24, matrizRiesgosFisico1_25, matrizRiesgosFisico1_26, matrizRiesgosFisico1_27, matrizRiesgosFisico1_28, matrizRiesgosFisico1_29, matrizRiesgosFisico1_30, 
+	matrizRiesgosFisico1_31, matrizRiesgosFisico1_32, matrizRiesgosFisico1_33, matrizRiesgosFisico1_34, matrizRiesgosFisico1_35, matrizRiesgosFisico1_36, matrizRiesgosFisico1_37, matrizRiesgosFisico1_38, matrizRiesgosFisico1_39, matrizRiesgosFisico1_40};
+	public MatrizRiesgosFisico[] matrizRiesgosFisico2 = {matrizRiesgosFisico1_1, matrizRiesgosFisico1_2, matrizRiesgosFisico1_3, matrizRiesgosFisico1_4, matrizRiesgosFisico1_5, matrizRiesgosFisico1_6, matrizRiesgosFisico1_7, matrizRiesgosFisico1_8, matrizRiesgosFisico1_9, matrizRiesgosFisico1_10, 
+	matrizRiesgosFisico1_11, matrizRiesgosFisico1_12, matrizRiesgosFisico1_13, matrizRiesgosFisico1_14, matrizRiesgosFisico1_15, matrizRiesgosFisico1_16, matrizRiesgosFisico1_17, matrizRiesgosFisico1_18, matrizRiesgosFisico1_19, matrizRiesgosFisico1_20, 
+	matrizRiesgosFisico1_21, matrizRiesgosFisico1_22, matrizRiesgosFisico1_23, matrizRiesgosFisico1_24, matrizRiesgosFisico1_25, matrizRiesgosFisico1_26, matrizRiesgosFisico1_27, matrizRiesgosFisico1_28, matrizRiesgosFisico1_29, matrizRiesgosFisico1_30, 
+	matrizRiesgosFisico1_31, matrizRiesgosFisico1_32, matrizRiesgosFisico1_33, matrizRiesgosFisico1_34, matrizRiesgosFisico1_35, matrizRiesgosFisico1_36, matrizRiesgosFisico1_37, matrizRiesgosFisico1_38, matrizRiesgosFisico1_39, matrizRiesgosFisico1_40};
+
 	public DataGame(){
 	}
 	public DataGame(List<MatrizMedidores[]> listaFinalMedidores){
 		this.listaFinalMedidores = listaFinalMedidores;
 	}
-
 	public DataGame(int fichaActual, int emp1, int emp2, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
 		this.fichaActual = fichaActual;
 		this.emp1 = emp1;
@@ -37,28 +53,46 @@ public class DataGame : System.Object{
 		this.listaFinalMedidores = listaFinalMedidores;
 		this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }
-
 	public DataGame(List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
 		this.listaFinalMedidores = listaFinalMedidores;
 		this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }
-
 	public List<MatrizMedidores[]> getListaFinalMedidores() {
 		return this.listaFinalMedidores;
 	}
-
 	public void setListaFinalMedidores(List<MatrizMedidores[]> listaFinalMedidores) {
 		this.listaFinalMedidores = listaFinalMedidores;
 	}
-
 	public List<MatrizRiesgosFisico[]> getMatrizFinalRiesgosFisicos() {
 		return this.matrizFinalRiesgosFisicos;
 	}
-
 	public void setMatrizFinalRiesgosFisicos(List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos) {
 		this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
 	}
-
+	public void setMM1(){
+		MatrizMedidores [] mM = {matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
+								 matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8};
+		listaFinalMedidores.Add(mM);
+	}
+	public void setMM2(){
+		MatrizMedidores [] mM = {matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
+								 matrizMedidoresEmp2_5, matrizMedidoresEmp2_6, matrizMedidoresEmp2_7, matrizMedidoresEmp2_8};
+		listaFinalMedidores.Add(mM);
+	}
+	public void setMR1(){
+		MatrizRiesgosFisico [] mR = {matrizRiesgosFisico1_1, matrizRiesgosFisico1_2, matrizRiesgosFisico1_3, matrizRiesgosFisico1_4, matrizRiesgosFisico1_5, matrizRiesgosFisico1_6, matrizRiesgosFisico1_7, matrizRiesgosFisico1_8, matrizRiesgosFisico1_9, matrizRiesgosFisico1_10, 
+			matrizRiesgosFisico1_11, matrizRiesgosFisico1_12, matrizRiesgosFisico1_13, matrizRiesgosFisico1_14, matrizRiesgosFisico1_15, matrizRiesgosFisico1_16, matrizRiesgosFisico1_17, matrizRiesgosFisico1_18, matrizRiesgosFisico1_19, matrizRiesgosFisico1_20, 
+			matrizRiesgosFisico1_21, matrizRiesgosFisico1_22, matrizRiesgosFisico1_23, matrizRiesgosFisico1_24, matrizRiesgosFisico1_25, matrizRiesgosFisico1_26, matrizRiesgosFisico1_27, matrizRiesgosFisico1_28, matrizRiesgosFisico1_29, matrizRiesgosFisico1_30, 
+			matrizRiesgosFisico1_31, matrizRiesgosFisico1_32, matrizRiesgosFisico1_33, matrizRiesgosFisico1_34, matrizRiesgosFisico1_35, matrizRiesgosFisico1_36, matrizRiesgosFisico1_37, matrizRiesgosFisico1_38, matrizRiesgosFisico1_39, matrizRiesgosFisico1_40};
+		matrizFinalRiesgosFisicos.Add(mR);
+	}
+	public void setMR2(){
+		MatrizRiesgosFisico [] mR = {matrizRiesgosFisico2_1, matrizRiesgosFisico2_2, matrizRiesgosFisico2_3, matrizRiesgosFisico2_4, matrizRiesgosFisico2_5, matrizRiesgosFisico2_6, matrizRiesgosFisico2_7, matrizRiesgosFisico2_8, matrizRiesgosFisico2_9, matrizRiesgosFisico2_10, 
+			matrizRiesgosFisico2_11, matrizRiesgosFisico2_12, matrizRiesgosFisico2_13, matrizRiesgosFisico2_14, matrizRiesgosFisico2_15, matrizRiesgosFisico2_16, matrizRiesgosFisico2_17, matrizRiesgosFisico2_18, matrizRiesgosFisico2_19, matrizRiesgosFisico2_20, 
+			matrizRiesgosFisico2_21, matrizRiesgosFisico2_22, matrizRiesgosFisico2_23, matrizRiesgosFisico2_24, matrizRiesgosFisico2_25, matrizRiesgosFisico2_26, matrizRiesgosFisico2_27, matrizRiesgosFisico2_28, matrizRiesgosFisico2_29, matrizRiesgosFisico2_30, 
+			matrizRiesgosFisico2_31, matrizRiesgosFisico2_32, matrizRiesgosFisico2_33, matrizRiesgosFisico2_34, matrizRiesgosFisico2_35, matrizRiesgosFisico2_36, matrizRiesgosFisico2_37, matrizRiesgosFisico2_38, matrizRiesgosFisico2_39, matrizRiesgosFisico2_40};
+		matrizFinalRiesgosFisicos.Add(mR);
+	}
 	public void setMatrizMedidores1emp(){
 		matrizMedidoresEmp1_1 = listaFinalMedidores[0][0];
 		matrizMedidoresEmp1_2 = listaFinalMedidores[0][1];
@@ -80,25 +114,32 @@ public class DataGame : System.Object{
 		matrizMedidoresEmp2_8 = listaFinalMedidores[1][7];
 	}
 
+	public void setMatrizRiesgos1emp(){
+		for (int i = 0; i < matrizFinalRiesgosFisicos[0].Length; i++){
+			matrizRiesgosFisico1[i] = matrizFinalRiesgosFisicos[0][i];
+		}
+	}
+	public void setMatrizRiesgos2emp(){
+		for (int i = 0; i < matrizFinalRiesgosFisicos[1].Length; i++){
+			matrizRiesgosFisico2[i] = matrizFinalRiesgosFisicos[1][i];
+		}
+
+	}
 	public int getFichaActual() {
 		return this.fichaActual;
 	}
-
 	public void setFichaActual(int fichaActual) {
 		this.fichaActual = fichaActual;
 	}
-
 	public int getEmp1() {
 		return this.emp1;
 	}
-
 	public void setEmp1(int emp1) {
 		this.emp1 = emp1;
 	}
 	public int getEmp2() {
 		return this.emp2;
 	}
-
 	public void setEmp2(int emp2) {
 		this.emp2 = emp2;
 	}
@@ -172,6 +213,34 @@ public class DataPlayer : System.Object{
 		this.emp1 = emp1;
 		this.emp2 = emp2;
 		//this.data = data;
+		//this.listaFinalMedidores = listaFinalMedidores;
+		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
+    }
+
+	public void setData(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
+		, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
+        this.user_id = user_id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.grupo = grupo;
+        this.sub_grupo = sub_grupo;
+        this.is_groupal = is_groupal;
+        this.fichaActual = fichaActual;
+		this.emp1 = emp1;
+		this.emp2 = emp2;
+		this.data = data;
+		//this.listaFinalMedidores = listaFinalMedidores;
+		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
+    }
+	public void setData1(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal){
+        this.user_id = user_id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.grupo = grupo;
+        this.sub_grupo = sub_grupo;
+        this.is_groupal = is_groupal;
 		//this.listaFinalMedidores = listaFinalMedidores;
 		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }

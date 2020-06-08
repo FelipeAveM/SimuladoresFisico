@@ -11,6 +11,7 @@ public class Ficha3Physical : MonoBehaviour {
     public static List<int []> controlesIndex = new List<int[]>();
     public static bool canPassF4 = false;
     [System.NonSerialized] public static MatrizMedidores [] matVar;
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores = FlowControllerPhysical.data.listaFinalMedidores;
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3 = new List<MatrizMedidores[]>();
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3b = new List<MatrizMedidores[]>();
     public void Start(){
@@ -18,9 +19,9 @@ public class Ficha3Physical : MonoBehaviour {
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2) FlowControllerPhysical.dataPlayer.setFichaActual(3);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6) FlowControllerPhysical.dataPlayer.setFichaActual(7);
         Debug.Log("Ficha 3 Ficha Actual: " +FlowControllerPhysical.dataPlayer.getFichaActual());
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3){
-            Debug.Log("primer if matVar");
-            matVar = FlowControllerPhysical.data.getListaFinalMedidores()[0];
+        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3 
+            || FlowControllerPhysical.dataPlayer.getFichaActual() == 4){
+            matVar = listaFinalMedidores[0];
         } 
         else {
             
@@ -33,16 +34,13 @@ public class Ficha3Physical : MonoBehaviour {
         LoadInfo();
     }
     public void StarForcedF3(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6 && !Ficha1Fisicos.cargaEmp1){
            Debug.Log("Start F3 Forced");
            matVar = null;
            Start();
        } 
     }
     void LoadInfo(){
-        for (int j = 0; j < 8; j++){
-            //Debug.Log(JsonUtility.ToJson(matVar[j]));
-        }
         if(Ficha1Fisicos.empresaSeleccionada == 2){
             Transform tablaFicha3 = transform.Find("Scroll").Find("TableEvaluation");         
             for (int i = 0; i < tablaFicha3.GetChildCount(); i++){
@@ -77,12 +75,19 @@ public class Ficha3Physical : MonoBehaviour {
                         break;
                     case 4:
                         if(matVar[j-1].getRiesgo()){
-                            texto.text = "";
-                            int [] indices = new int[2];
-                            indices[0] = i;
-                            indices[1] = j;
-                            controlesIndex.Add(indices);
-                            texto.characterLimit = 1000;
+                            if((FlowControllerPhysical.data.fichaActual == 4 || FlowControllerPhysical.data.fichaActual == 8)
+                             && matVar[j-1].controlRiesgoLux != "No es necesario un control"){
+                                texto.text = matVar[j-1].controlRiesgoLux;
+                                texto.interactable = false;
+                            } 
+                            else{
+                                texto.text = "";
+                                int [] indices = new int[2];
+                                indices[0] = i;
+                                indices[1] = j;
+                                controlesIndex.Add(indices);
+                                texto.characterLimit = 1000;
+                            }
                         } 
                         else{
                             texto.text = "NO";
@@ -127,12 +132,19 @@ public class Ficha3Physical : MonoBehaviour {
                         
                     case 8:
                         if(matVar[j-1].getRiesgoSono()){
-                            texto.text = "";
-                            int [] indices = new int[2];
-                            indices[0] = i;
-                            indices[1] = j;
-                            controlesIndex.Add(indices);
-                            texto.characterLimit = 1000;
+                            if(FlowControllerPhysical.data.fichaActual == 4 || FlowControllerPhysical.data.fichaActual == 8
+                            && matVar[j-1].controlRiesgoSono != "No es necesario un control"){
+                                texto.text = matVar[j-1].controlRiesgoSono;
+                                texto.interactable = false;
+                            } 
+                            else{
+                                texto.text = "";
+                                int [] indices = new int[2];
+                                indices[0] = i;
+                                indices[1] = j;
+                                controlesIndex.Add(indices);
+                                texto.characterLimit = 1000;
+                            }
                         } 
                         else{
                             texto.text = "NO";
@@ -157,12 +169,19 @@ public class Ficha3Physical : MonoBehaviour {
                         break;
                     case 12:
                         if(matVar[j-1].getRiesgoDosi()) {
-                            texto.text = "";
-                            int [] indices = new int[2];
-                            indices[0] = i;
-                            indices[1] = j;
-                            controlesIndex.Add(indices);
-                            texto.characterLimit = 1000;
+                            if(FlowControllerPhysical.data.fichaActual == 4 || FlowControllerPhysical.data.fichaActual == 8
+                            && matVar[j-1].controlRiesgoDosi != "No es necesario un control"){
+                                texto.text = matVar[j-1].controlRiesgoDosi;
+                                texto.interactable = false;
+                            } 
+                            else{
+                                texto.text = "";
+                                int [] indices = new int[2];
+                                indices[0] = i;
+                                indices[1] = j;
+                                controlesIndex.Add(indices);
+                                texto.characterLimit = 1000;
+                            }
                         }
                         else{
                             texto.text = "NO";
@@ -196,12 +215,19 @@ public class Ficha3Physical : MonoBehaviour {
                         break;
                     case 16:
                         if(matVar[j-1].getRiesgoTermo()){
-                            texto.text = "";
-                            int [] indices = new int[2];
-                            indices[0] = i;
-                            indices[1] = j;
-                            controlesIndex.Add(indices);
-                            texto.characterLimit = 1000;
+                            if(FlowControllerPhysical.data.fichaActual == 4 || FlowControllerPhysical.data.fichaActual == 8
+                            && matVar[j-1].controlRiesgoTermo != "No es necesario un control"){
+                                texto.text = matVar[j-1].controlRiesgoTermo;
+                                texto.interactable = false;
+                            } 
+                            else{
+                                texto.text = "";
+                                int [] indices = new int[2];
+                                indices[0] = i;
+                                indices[1] = j;
+                                controlesIndex.Add(indices);
+                                texto.characterLimit = 1000;
+                            }
                         } 
                         else{
                             texto.text = "NO";
@@ -235,12 +261,19 @@ public class Ficha3Physical : MonoBehaviour {
                         break;
                     case 21:
                         if(matVar[j-1].getRiesgoVibro()){
-                            texto.text = "";
-                            int [] indices = new int[2];
-                            indices[0] = i;
-                            indices[1] = j;
-                            controlesIndex.Add(indices);
-                            texto.characterLimit = 1000;
+                            if(FlowControllerPhysical.data.fichaActual == 4 || FlowControllerPhysical.data.fichaActual == 8
+                            && matVar[j-1].controlRiesgoVibro != "No es necesario un control"){
+                                texto.text = matVar[j-1].controlRiesgoVibro;
+                                texto.interactable = false;
+                            } 
+                            else{
+                                texto.text = "";
+                                int [] indices = new int[2];
+                                indices[0] = i;
+                                indices[1] = j;
+                                controlesIndex.Add(indices);
+                                texto.characterLimit = 1000;
+                            }
                         } 
                         else{
                             texto.text = "NO";
@@ -343,8 +376,10 @@ public class Ficha3Physical : MonoBehaviour {
                 }
             }
             canPassF4 = true;
+            if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3 || FlowControllerPhysical.dataPlayer.getFichaActual() == 4)
+                FlowControllerPhysical.dataPlayer.setFichaActual(4);
+            else FlowControllerPhysical.dataPlayer.setFichaActual(8);
             if(Ficha1Fisicos.empresasCompletadas == 1){
-                Debug.Log("matVar2");
                 MatrizMedidores [] matVar2 = new MatrizMedidores[8];
                 for (int i = 0; i < matVar.Length; i++){
                     matVar2[i] = matVar[i];

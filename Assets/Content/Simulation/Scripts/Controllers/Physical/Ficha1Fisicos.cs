@@ -17,7 +17,7 @@ public class Ficha1Fisicos : MonoBehaviour
     public Transform alert;
     [System.NonSerialized] public static MatrizMedidores [] matrizMedidores = new MatrizMedidores[8];
     [System.NonSerialized] public static MatrizMedidores [][] matrizFinalMedidores = new MatrizMedidores[3][];
-    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores = new List<MatrizMedidores[]>();
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores = FlowControllerPhysical.data.listaFinalMedidores;
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidoresPrueba = new List<MatrizMedidores[]>();
     [System.NonSerialized] public static int empresasCompletadas = 0;
     [System.NonSerialized] public string [] datosMatriz = new string[20];
@@ -30,32 +30,26 @@ public class Ficha1Fisicos : MonoBehaviour
     [System.NonSerialized] public static int areasEmpCompletas = 0;
     [System.NonSerialized] public static bool guardoAreaF1 = false;
     public bool estadoCompletado = false;
+    [System.NonSerialized] public static bool cargaEmp1 = false;
     public void Start(){
         listaFinalMedidoresPrueba = FlowControllerPhysical.data.getListaFinalMedidores();
         alertMessage = alert.GetComponent<AlertMessage>();
         businessMapParent = transform.GetChild(0);
         businessMapParent.gameObject.SetActive(true);
+        businessMapParent.GetChild(0).GetChild(empresaSeleccionada-1).gameObject.SetActive(true);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 1) FlowControllerPhysical.dataPlayer.setFichaActual(2);
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5) FlowControllerPhysical.dataPlayer.setFichaActual(6);
-        Debug.Log("Ficha 1 Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2 && FlowControllerPhysical.dataPlayer.getFichaActual() < 6) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[0]);
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() > 6) listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[1]);
+        //if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2 && FlowControllerPhysical.dataPlayer.getFichaActual() < 6) 
+            //listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[0]);
+        //if(FlowControllerPhysical.dataPlayer.getFichaActual() > 6) 
+            //listaFinalMedidores.Add(FlowControllerPhysical.data.getListaFinalMedidores()[1]);
         areasEmpCompletas = 0;
         estadoCompletado = false;
         //Pruebas
+        Debug.Log("Ficha 1 Ficha Actual: " + FlowControllerPhysical.dataPlayer.getFichaActual());
         if(FlowControllerPhysical.dataPlayer.getFichaActual() > 2 && FlowControllerPhysical.dataPlayer.getFichaActual() != 6){
-            if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){            
-                areasEmpCompletas = 8;
-                estadoCompletado = true;
-                Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(1).GetChild(1);
-                disableChilds(zonasHijas.gameObject);
-                Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(3);
-                guardarButon.gameObject.SetActive(true);
-                //Prueba
-                //FlowControllerPhysical.setM2();
-
-            }
-            else{
+            Debug.Log("Entró a omitir ficha 1: " + FlowControllerPhysical.dataPlayer.getFichaActual());
+            if(FlowControllerPhysical.dataPlayer.getFichaActual() > 6) {
                 areasEmpCompletas = 8;
                 estadoCompletado = true;
                 Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(1).GetChild(1);
@@ -63,23 +57,32 @@ public class Ficha1Fisicos : MonoBehaviour
                 Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp1()).GetChild(3);
                 guardarButon.gameObject.SetActive(true);
             }
+            else{
+                areasEmpCompletas = 8;
+                estadoCompletado = true;
+                Transform zonasHijas =  transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(1).GetChild(1);
+                disableChilds(zonasHijas.gameObject);
+                Transform guardarButon = transform.Find("BusinessMap").GetChild(FlowControllerPhysical.dataPlayer.getEmp2()).GetChild(3);
+                guardarButon.gameObject.SetActive(true);
+            }
+            
         }
         for (int i = 0; i < businessMapParent.childCount; i++){
             businessMapParent.GetChild(i).gameObject.SetActive(false);
         }
         if (isMapVisible){
-            businessMapParent.GetChild(flowController.GetActiveBusiness()).gameObject.SetActive(true);
+            businessMapParent.GetChild(empresaSeleccionada-1).gameObject.SetActive(true);
         }
         mediciones = new string [5];
         doMedicionesLab();
-        if(empresaSeleccionada == 2){
+        if(empresaSeleccionada == 2 && (FlowControllerPhysical.dataPlayer.getFichaActual() == 2 || FlowControllerPhysical.dataPlayer.getFichaActual() ==6)){
             areasEmpCompletas = 1;
         }
         if(areasEmpCompletas != 8) changeTextSize();
     }
 
     public void StarForcedF1(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5){
+       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 5 && !cargaEmp1){
            Debug.Log("Start F1 Forced");
            Start();
        } 
@@ -744,19 +747,21 @@ public class Ficha1Fisicos : MonoBehaviour
             matrizMedidores[7] = m7;
         }
         if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2){
-            listaFinalMedidores.Add(matrizMedidores);
+            FlowControllerPhysical.data.listaFinalMedidores.Add(matrizMedidores);
             empresasCompletadas++;
             areasEmpCompletas = 0;
-            FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores);
+            //FlowControllerPhysical.data.setListaFinalMedidores(FlowControllerPhysical.data.listaFinalMedidores);
             Debug.Log("Set 1 Matriz Medidores data");
+            FlowControllerPhysical.dataPlayer.setFichaActual(3);
             FlowControllerPhysical.dataPlayer.data.setMatrizMedidores1emp();
         }
         else if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6){
-            listaFinalMedidores.Add(matrizMedidores);
+            FlowControllerPhysical.data.listaFinalMedidores.Add(matrizMedidores);
             empresasCompletadas++;
             areasEmpCompletas = 0;
-            FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores);
+            //FlowControllerPhysical.data.setListaFinalMedidores(FlowControllerPhysical.data.listaFinalMedidores);
             Debug.Log("Set 2 Matriz Medidores data");
+            FlowControllerPhysical.dataPlayer.setFichaActual(7);
             FlowControllerPhysical.dataPlayer.data.setMatrizMedidores2emp();
         }
         Debug.Log("La matriz de la ficha 1 tiene  : " + FlowControllerPhysical.data.getListaFinalMedidores().Count);
