@@ -69,15 +69,38 @@ public class DataGame : System.Object{
 	public void setMatrizFinalRiesgosFisicos(List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos) {
 		this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
 	}
-	public void setMM1(){
-		MatrizMedidores [] mM = {matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
-								 matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8};
-		listaFinalMedidores.Add(mM);
+	public void setMM(int state){
+		if(state == 2){
+			setMR1();
+			MatrizMedidores [] mM = {matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
+									matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8};
+			listaFinalMedidores.Add(mM);
+			Ficha1Fisicos.empresasCompletadas = 1;
+			//setMatrizRiesgos1emp();
+			MatrizMedidores [] mM2 = {matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
+									matrizMedidoresEmp2_5, matrizMedidoresEmp2_6, matrizMedidoresEmp2_7, matrizMedidoresEmp2_8};
+			listaFinalMedidores.Add(mM2);
+		}
+		else if(state == 1){
+			MatrizMedidores [] mM1 = {matrizMedidoresEmp1_1, matrizMedidoresEmp1_2, matrizMedidoresEmp1_3, matrizMedidoresEmp1_4,
+									matrizMedidoresEmp1_5, matrizMedidoresEmp1_6, matrizMedidoresEmp1_7, matrizMedidoresEmp1_8};
+			listaFinalMedidores.Add(mM1);
+		}
+		else{
+			listaFinalMedidores.Clear();
+		}
 	}
 	public void setMM2(){
-		MatrizMedidores [] mM = {matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
+		Debug.Log("MM2");
+		MatrizMedidores [] mM2 = {matrizMedidoresEmp2_1, matrizMedidoresEmp2_2, matrizMedidoresEmp2_3, matrizMedidoresEmp2_4,
 								 matrizMedidoresEmp2_5, matrizMedidoresEmp2_6, matrizMedidoresEmp2_7, matrizMedidoresEmp2_8};
-		listaFinalMedidores.Add(mM);
+		listaFinalMedidores.Add(mM2);
+		for (int i = 0; i < FlowControllerPhysical.data.listaFinalMedidores.Count; i++){
+			Debug.Log("Matriz: " + i);
+			for (int j = 0; j < FlowControllerPhysical.data.listaFinalMedidores[i].Length; j++){
+				Debug.Log(JsonUtility.ToJson(FlowControllerPhysical.data.listaFinalMedidores[i][j]));
+			}
+		}
 	}
 	public void setMR1(){
 		MatrizRiesgosFisico [] mR = {matrizRiesgosFisico1_1, matrizRiesgosFisico1_2, matrizRiesgosFisico1_3, matrizRiesgosFisico1_4, matrizRiesgosFisico1_5, matrizRiesgosFisico1_6, matrizRiesgosFisico1_7, matrizRiesgosFisico1_8, matrizRiesgosFisico1_9, matrizRiesgosFisico1_10, 
@@ -87,11 +110,21 @@ public class DataGame : System.Object{
 		matrizFinalRiesgosFisicos.Add(mR);
 	}
 	public void setMR2(){
-		MatrizRiesgosFisico [] mR = {matrizRiesgosFisico2_1, matrizRiesgosFisico2_2, matrizRiesgosFisico2_3, matrizRiesgosFisico2_4, matrizRiesgosFisico2_5, matrizRiesgosFisico2_6, matrizRiesgosFisico2_7, matrizRiesgosFisico2_8, matrizRiesgosFisico2_9, matrizRiesgosFisico2_10, 
+		Debug.Log("MR2");
+		MatrizRiesgosFisico [] mR2 = {matrizRiesgosFisico2_1, matrizRiesgosFisico2_2, matrizRiesgosFisico2_3, matrizRiesgosFisico2_4, matrizRiesgosFisico2_5, matrizRiesgosFisico2_6, matrizRiesgosFisico2_7, matrizRiesgosFisico2_8, matrizRiesgosFisico2_9, matrizRiesgosFisico2_10, 
 			matrizRiesgosFisico2_11, matrizRiesgosFisico2_12, matrizRiesgosFisico2_13, matrizRiesgosFisico2_14, matrizRiesgosFisico2_15, matrizRiesgosFisico2_16, matrizRiesgosFisico2_17, matrizRiesgosFisico2_18, matrizRiesgosFisico2_19, matrizRiesgosFisico2_20, 
 			matrizRiesgosFisico2_21, matrizRiesgosFisico2_22, matrizRiesgosFisico2_23, matrizRiesgosFisico2_24, matrizRiesgosFisico2_25, matrizRiesgosFisico2_26, matrizRiesgosFisico2_27, matrizRiesgosFisico2_28, matrizRiesgosFisico2_29, matrizRiesgosFisico2_30, 
 			matrizRiesgosFisico2_31, matrizRiesgosFisico2_32, matrizRiesgosFisico2_33, matrizRiesgosFisico2_34, matrizRiesgosFisico2_35, matrizRiesgosFisico2_36, matrizRiesgosFisico2_37, matrizRiesgosFisico2_38, matrizRiesgosFisico2_39, matrizRiesgosFisico2_40};
-		matrizFinalRiesgosFisicos.Add(mR);
+		matrizFinalRiesgosFisicos.Add(mR2);
+		for (int i = 0; i < matrizFinalRiesgosFisicos.Count; i++){
+            Debug.Log("Matriz: " + i);
+            for (int j = 0; j < matrizFinalRiesgosFisicos[i].Length; j++){
+                if(matrizFinalRiesgosFisicos[i][j] != null)
+					Debug.Log(JsonUtility.ToJson(matrizFinalRiesgosFisicos[i][j]));
+            }
+        }
+		setMatrizRiesgos2emp();
+
 	}
 	public void setMatrizMedidores1emp(){
 		matrizMedidoresEmp1_1 = listaFinalMedidores[0][0];
@@ -164,12 +197,7 @@ public class DataPlayer : System.Object{
     public bool is_groupal;
 	[SerializeField]
     public bool is_finished = false;
-    [SerializeField]
-    public int fichaActual; 
-	[SerializeField]
-    public int emp1;
-    [SerializeField]
-    public int emp2; 
+   
 	/*Es un string no un MatrizMedidores
     [SerializeField]
     public List<MatrizMedidores[]> listaFinalMedidores;
@@ -183,8 +211,7 @@ public class DataPlayer : System.Object{
 		
 	}
 
-	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
-		, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
+	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, DataGame data){
         this.user_id = user_id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -192,15 +219,12 @@ public class DataPlayer : System.Object{
         this.grupo = grupo;
         this.sub_grupo = sub_grupo;
         this.is_groupal = is_groupal;
-        this.fichaActual = fichaActual;
-		this.emp1 = emp1;
-		this.emp2 = emp2;
 		this.data = data;
 		//this.listaFinalMedidores = listaFinalMedidores;
 		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }
 
-	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
+	public DataPlayer(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal
 		){//, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
         this.user_id = user_id;
         this.nombre = nombre;
@@ -209,15 +233,12 @@ public class DataPlayer : System.Object{
         this.grupo = grupo;
         this.sub_grupo = sub_grupo;
         this.is_groupal = is_groupal;
-        this.fichaActual = fichaActual;
-		this.emp1 = emp1;
-		this.emp2 = emp2;
 		//this.data = data;
 		//this.listaFinalMedidores = listaFinalMedidores;
 		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
     }
 
-	public void setData(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal, int fichaActual, int emp1, int emp2 
+	public void setData(string user_id, string nombre, string apellido, string correo, string grupo, string sub_grupo, bool is_groupal
 		, DataGame data){//, List<MatrizMedidores[]> listaFinalMedidores, List<MatrizRiesgosFisico[]> matrizFinalRiesgosFisicos){
         this.user_id = user_id;
         this.nombre = nombre;
@@ -226,9 +247,6 @@ public class DataPlayer : System.Object{
         this.grupo = grupo;
         this.sub_grupo = sub_grupo;
         this.is_groupal = is_groupal;
-        this.fichaActual = fichaActual;
-		this.emp1 = emp1;
-		this.emp2 = emp2;
 		this.data = data;
 		//this.listaFinalMedidores = listaFinalMedidores;
 		//this.matrizFinalRiesgosFisicos = matrizFinalRiesgosFisicos;
@@ -306,29 +324,6 @@ public class DataPlayer : System.Object{
 
 	public void setIsFinished(bool is_finished) {
 		this.is_finished = is_finished;
-	}
-
-	public int getFichaActual() {
-		return this.fichaActual;
-	}
-
-	public void setFichaActual(int fichaActual) {
-		this.fichaActual = fichaActual;
-	}
-
-	public int getEmp1() {
-		return this.emp1;
-	}
-
-	public void setEmp1(int emp1) {
-		this.emp1 = emp1;
-	}
-	public int getEmp2() {
-		return this.emp2;
-	}
-
-	public void setEmp2(int emp2) {
-		this.emp2 = emp2;
 	}
 	/*
 	public List<MatrizMedidores[]> getListaFinalMedidores() {

@@ -11,30 +11,28 @@ public class Ficha3Physical : MonoBehaviour {
     public static List<int []> controlesIndex = new List<int[]>();
     public static bool canPassF4 = false;
     [System.NonSerialized] public static MatrizMedidores [] matVar;
-    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores = FlowControllerPhysical.data.listaFinalMedidores;
+    [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidoresF3 = FlowControllerPhysical.data.listaFinalMedidores;
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3 = new List<MatrizMedidores[]>();
     [System.NonSerialized] public static List<MatrizMedidores[]> listaFinalMedidores3b = new List<MatrizMedidores[]>();
     public void Start(){
 		alertMessage = alert.GetComponent<AlertMessage>();
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 2) FlowControllerPhysical.dataPlayer.setFichaActual(3);
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6) FlowControllerPhysical.dataPlayer.setFichaActual(7);
-        Debug.Log("Ficha 3 Ficha Actual: " +FlowControllerPhysical.dataPlayer.getFichaActual());
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3 
-            || FlowControllerPhysical.dataPlayer.getFichaActual() == 4){
-            matVar = listaFinalMedidores[0];
+        if(FlowControllerPhysical.data.getFichaActual() == 2) FlowControllerPhysical.data.setFichaActual(3);
+        if(FlowControllerPhysical.data.getFichaActual() == 6) FlowControllerPhysical.data.setFichaActual(7);
+        if(FlowControllerPhysical.data.getFichaActual() == 3 || FlowControllerPhysical.data.getFichaActual() == 4){
+            if(FlowControllerPhysical.data.listaFinalMedidores.Count == 0) matVar = listaFinalMedidoresF3[0];
+            else matVar = FlowControllerPhysical.data.listaFinalMedidores[0]; 
         } 
         else {
-            
-            Debug.Log("Longitud de ListaFinalMedidores hasta ficha3_2: " + FlowControllerPhysical.data.getListaFinalMedidores().Count);
-            matVar = FlowControllerPhysical.data.getListaFinalMedidores()[1];
-            
+            //matVar = listaFinalMedidoresF3[1];
+            if(FlowControllerPhysical.data.listaFinalMedidores.Count == 0) matVar = listaFinalMedidoresF3[1];
+            else matVar = FlowControllerPhysical.data.listaFinalMedidores[1]; 
             //Prueba
             //matVar = MatrizMedidoresPrueba2.matrizDePrueba;
         }
         LoadInfo();
     }
     public void StarForcedF3(){
-       if(FlowControllerPhysical.dataPlayer.getFichaActual() == 6 && !Ficha1Fisicos.cargaEmp1){
+       if(FlowControllerPhysical.data.getFichaActual() == 6 && !Ficha1Fisicos.cargaEmp1){
            Debug.Log("Start F3 Forced");
            matVar = null;
            Start();
@@ -376,14 +374,16 @@ public class Ficha3Physical : MonoBehaviour {
                 }
             }
             canPassF4 = true;
-            if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3 || FlowControllerPhysical.dataPlayer.getFichaActual() == 4)
-                FlowControllerPhysical.dataPlayer.setFichaActual(4);
-            else FlowControllerPhysical.dataPlayer.setFichaActual(8);
+            if(FlowControllerPhysical.data.getFichaActual() == 3 || FlowControllerPhysical.data.getFichaActual() == 4)
+                FlowControllerPhysical.data.setFichaActual(4);
+            else FlowControllerPhysical.data.setFichaActual(8);
             if(Ficha1Fisicos.empresasCompletadas == 1){
                 MatrizMedidores [] matVar2 = new MatrizMedidores[8];
                 for (int i = 0; i < matVar.Length; i++){
                     matVar2[i] = matVar[i];
                 }
+                Debug.Log("Agrega las dos");
+                if(Ficha1Fisicos.cargaEmp1) listaFinalMedidores3.Add(listaFinalMedidoresF3[0]);
                 listaFinalMedidores3.Add(matVar2);
                 FlowControllerPhysical.data.setListaFinalMedidores(listaFinalMedidores3);
             }
@@ -411,7 +411,7 @@ public class Ficha3Physical : MonoBehaviour {
             tablaFicha3.GetChild(0).GetChild(7).Find("Controles (1)").gameObject.SetActive(false);
     }
     public void DestroyF4(GameObject gameObject){
-        if(FlowControllerPhysical.dataPlayer.getFichaActual() == 3){
+        if(FlowControllerPhysical.data.getFichaActual() == 3){
             //UnityEditor.PrefabUtility.ResetToPrefabState(this.gameObject);
         }
     }

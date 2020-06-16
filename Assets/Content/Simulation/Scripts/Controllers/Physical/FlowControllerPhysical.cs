@@ -95,8 +95,8 @@ public class FlowControllerPhysical : MonoBehaviour {
         switch (data.getFichaActual()){
             case 0:
                 //Nuevo
-                dataPlayer.setFichaActual(1);
-                business = new int[randomBusiness];
+                data.setFichaActual(1);
+                business = new int[randomBusiness]; 
                 GetReference ();
                 ClosePanels ();
                 ChooseBusiness();
@@ -105,27 +105,30 @@ public class FlowControllerPhysical : MonoBehaviour {
             case 1: case 2: case 3: case 4:
                 GetReference ();
                 ClosePanels ();
-                ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
+                ChooseBusines2(data.getEmp1(), data.getEmp2());
                 OpenPanel (index);
                 break;
-            case 5: case 6: case 7:
+            case 5: case 6: case 7: case 8: case 9:
                 Ficha1Fisicos.cargaEmp1 = true;
                 GetReference ();
                 ClosePanels ();
-                ChooseBusines3(dataPlayer.getEmp2(), dataPlayer.getEmp1());
+                ChooseBusines3(data.getEmp2(), data.getEmp1());
                 OpenPanel (index);
                 baseHandWriteIntro.transform.GetComponent<FmodHandWriting>().StartStory(1);
+                break;
+            case 10:
+                
                 break;            
                 /*case 7:
                 //
                 GetReference ();
                 ClosePanels ();
-                ChooseBusines2(dataPlayer.getEmp1(), dataPlayer.getEmp2());
+                ChooseBusines2(data.getEmp1(), data.getEmp2());
                 OpenPanel (index);
                 break;
                 */
             default:
-                dataPlayer.setFichaActual(1);
+                data.setFichaActual(1);
                 business = new int[randomBusiness];
                 GetReference ();
                 ClosePanels ();
@@ -141,7 +144,8 @@ public class FlowControllerPhysical : MonoBehaviour {
     void checkJSONDataPlayer(){
         //Real
         //data = new DataGame();
-        dataPlayer.setData("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", false, 0, 0, 0, data);
+        //dataPlayer.setData("usuarioPoli2","nombre2","apellido2","usuario2@poligran.edu.co","Fisico","Laboratorio", true, 0, 0, 0, data);
+        dataPlayer.setData("usuarioPoli2","nombre2","apellido2","usuario2@poligran.edu.co","Fisico","Laboratorio", true, data);
         //Pruebas
         //data = new DataGame();
         //data.setListaFinalMedidores(listaFinalMedidoresPrueba);
@@ -283,8 +287,8 @@ public class FlowControllerPhysical : MonoBehaviour {
 			businessParent.GetChild(index - 1).gameObject.SetActive(true);
 			businessParent.GetChild(index - 1).GetComponent<Button>().interactable = false;   
 		} 
-        dataPlayer.setEmp1(business[0]-1);
-        dataPlayer.setEmp2(business[1]-1);
+        data.setEmp1(business[0]-1);
+        data.setEmp2(business[1]-1);
         /*
 		for(int i=0; i<businessParent.childCount; i++){
 			if(businessParent.GetChild(i).gameObject.activeSelf == true){
@@ -333,15 +337,21 @@ public class FlowControllerPhysical : MonoBehaviour {
            
         }
 	}
+    
+    public void updateSimuladorF1(){
+        if(Ficha1Fisicos.areasEmpCompletas == 8 )updateSimulador();
+    }
     public void updateSimulador(){
         Debug.Log("Update Simulador");
-        Debug.Log("Ficha Actual dataPlayer: " + dataPlayer.getFichaActual() + " Empresa 1: " + dataPlayer.getEmp1() + " Empresa 2:" + dataPlayer.getEmp2());
-        data.setFichaActual(dataPlayer.getFichaActual()); 
-        data.setEmp1(dataPlayer.getEmp1()); 
-        data.setEmp2(dataPlayer.getEmp2());
+        Debug.Log("Ficha Actual dataPlayer: " + data.getFichaActual() + " Empresa 1: " + data.getEmp1() + " Empresa 2:" + data.getEmp2());
+        //data.setFichaActual(data.getFichaActual()); 
+        //data.setEmp1(data.getEmp1()); 
+        //data.setEmp2(data.getEmp2());
         Debug.Log("Ficha Actual data: " + data.getFichaActual() + " Empresa 1: " + data.getEmp1() + " Empresa 2:" + data.getEmp2());
         data.setListaFinalMedidores(listaFinalMedidoresPrueba);
         data.setMatrizFinalRiesgosFisicos(matrizFinalRiesgosFisicos);
+        //if(data.getFichaActual() == 1)
+        checkJSONDataPlayer();
         dataPlayer.setDataGame(data);
         string request = JsonUtility.ToJson(dataPlayer);
         #if UNITY_EDITOR
@@ -380,26 +390,21 @@ public class FlowControllerPhysical : MonoBehaviour {
         if(dataGameJSONEx.fichaActual >= 1){
             JsonUtility.FromJsonOverwrite(dataSimPlayer, data);
             //Debug.Log(JsonUtility.ToJson(data));
-            dataPlayer.setData1("usuarioPoli","nombre1","apellido","usuario@poligran.edu.co","Fisico","Laboratorio", true);
-            dataPlayer.setFichaActual(data.getFichaActual());
-            dataPlayer.setEmp1(data.emp1);
-            dataPlayer.setEmp2(data.emp2);
+            //dataPlayer.setData1("usuarioPoli2","nombre2","apellido2","usuario2@poligran.edu.co","Fisico","Laboratorio", true);
             Debug.Log(JsonUtility.ToJson(data));
-            Debug.Log(JsonUtility.ToJson(data.matrizMedidoresEmp1_1));
-            //Debug.Log(dataPlayer.fichaActual + "----" + dataPlayer.emp1 + "-----" + dataPlayer.emp2);
-            //Debug.Log(dataPlayer.getFichaActual() + "----" + dataPlayer.getEmp1() + "-----" + dataPlayer.getEmp2());
+            //Debug.Log(data.fichaActual + "----" + dataPlayer.emp1 + "-----" + dataPlayer.emp2);
+            //Debug.Log(data.getFichaActual() + "----" + data.getEmp1() + "-----" + data.getEmp2());
         }
         else{
             Debug.Log("Entrará a checkJSONDataPlayer()");
             checkJSONDataPlayer();
         }
         if(data.getFichaActual() > 6){
-            data.setMM2();
-            data.setMR1();
+            data.setMM(2);
         }
-        else if(data.getFichaActual() > 2) data.setMM1();
-        if(data.getFichaActual() == 8) data.setMR2();
-        Debug.Log(dataPlayer.fichaActual + "----" + dataPlayer.emp1 + "-----" + dataPlayer.emp2);
+        else if(data.getFichaActual() > 2) data.setMM(1);
+        if(data.getFichaActual() == 9) data.setMR2();
+        Debug.Log(data.fichaActual + "----" + data.emp1 + "-----" + data.emp2);
     }
 	public void OnCompletedEx(WWW response){
         Debug.Log(response.text);
@@ -450,7 +455,7 @@ public class FlowControllerPhysical : MonoBehaviour {
         }
     }
     public void checkZonas(){
-        Debug.Log(Ficha1Fisicos.areasEmpCompletas);
+        Debug.Log("Areas completadas: "+ Ficha1Fisicos.areasEmpCompletas);
         if(Ficha1Fisicos.areasEmpCompletas > 7){
             Debug.Log("Zonas Completas");
             Ficha1Fisicos.addToBigM();
