@@ -214,4 +214,13 @@ public class ApiController : MonoBehaviour {
 			OpenUrl(url);
 		#endif
 	}
+
+    public void OpenNorma()
+    {
+        #if UNITY_EDITOR
+                Application.OpenURL(Application.streamingAssetsPath + "/normatecnica.pdf");
+        #elif UNITY_WEBGL
+        OpenUrl(Application.streamingAssetsPath + "/normatecnica.pdf");
+        #endif  
+    }
 }
