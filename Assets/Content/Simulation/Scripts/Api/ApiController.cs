@@ -49,7 +49,7 @@ public class ApiController : MonoBehaviour {
     [DllImport("__Internal")]
 	private static extern void OpenUrl(string str);
 
-    public bool islocal = true;
+    public bool islocal = false;
     public static ApiController instance = null;
 	private List<string> URL_LIST = new List<string>();
     private string URL_BASE_LOC = "http://localhost:3000/";

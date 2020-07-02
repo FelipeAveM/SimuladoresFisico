@@ -6,16 +6,19 @@ using UnityEngine.Networking;
 
 public class URLParameterReader : MonoBehaviour {
     
-    public UserData usuario;
-    public DataRisk dataRisk;
+    public static UserData usuario;
+    public static DataRisk dataRisk;
 
         // Use this for initialization
         void Start () {
             //usuario = new userData();
             Dictionary <string, string> dict = URLParameters.GetSearchParameters();
             string str;
-            if (dict.TryGetValue("guid", out str))
+            if (dict.TryGetValue("guid", out str)){
                 usuario.Guid = str;
+                Debug.Log("------------El guid del usuario es: " + usuario.Guid);
+                FlowControllerPhysical.getUserByGuid();
+            }
             if (dict.TryGetValue("id", out str))
                 usuario.Id = str;
             if (dict.TryGetValue("risk", out str))
@@ -26,12 +29,6 @@ public class URLParameterReader : MonoBehaviour {
             }
         string urlAPI = gameObject.GetComponent<ApiController>().UrlBaseAPI + "api/Generic/InformationUser?guid=" + usuario.Guid;
         StartCoroutine(GetRequest(urlAPI,this.UserCallback));
-
-        //ARCHIVO DE PRUEBAS
-        //string urlAPI = gameObject.GetComponent<ApiController>().UrlBase + "user?guid=" + usuario.Guid;
-        string urlDB = "http://127.0.0.1:3000/pruebaSecOficina.json";
-        StartCoroutine(GetRequest(urlDB, this.DBCallback));
-
         print(urlAPI);
     }
 	

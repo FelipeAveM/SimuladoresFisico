@@ -9,11 +9,13 @@ public class DataBuilder : MonoBehaviour {
 
 	void Start(){
         flowController = transform.GetComponent<FlowController>();
-        //LECTURA DE ARCHIVOS DESDE LA BASE DE DATOS, ANTES DE INICIAR SIMULACION
+        //LECTURA DE ARCHIVOS DESDE LA BASE DE DATOS, ANTES DE INICIAR 
+		/*
         if(GameObject.Find("SceneController")!=null)
             dataRisk = GameObject.Find("SceneController").GetComponent<URLParameterReader>().dataRisk;
         else
             dataRisk.Usuario = GameObject.Find("SceneController").GetComponent<URLParameterReader>().usuario;
+			*/
         flowController.index = dataRisk.index;
     }
 

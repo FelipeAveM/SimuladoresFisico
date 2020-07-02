@@ -59,6 +59,8 @@ public class FlowControllerPhysical : MonoBehaviour {
     private DataBuilderPhysical dataBuilder;
     private Tour tour;
     private ApiController apiController;
+
+    //private URLParameterReader uRLParameterReader;
     private int[] business;
 	private int activeBusiness;
 
@@ -67,9 +69,28 @@ public class FlowControllerPhysical : MonoBehaviour {
     public int randomBusiness = 2;
     public int zonasTerminadas = 0;
     public bool tutoMedidores;
+    //public static UserData usuario;
+    //public static DataRisk dataRisk;
+
     
+    public static string guid = "https://prepro-apisimuladores.poligran.edu.co/api/Generic/InformationUser?guid=";
 
     void Awake(){
+        /*Dictionary <string, string> dict = URLParameters.GetSearchParameters();
+            string str;
+            if (dict.TryGetValue("guid", out str)){
+                usuario.Guid = str;
+                Debug.Log("------------El guid del usuario es: " + usuario.Guid);
+                FlowControllerPhysical.getUserByGuid();
+            }
+            if (dict.TryGetValue("id", out str))
+                usuario.Id = str;
+            if (dict.TryGetValue("risk", out str))
+            {
+                int intData;
+                int.TryParse(str, out intData);
+                usuario.Risk = intData;
+        }*/
         dataBuilder = GetComponent<DataBuilderPhysical>();
         apiController = GetComponent<ApiController>();
         tour = GetComponent<Tour>();
@@ -357,23 +378,48 @@ public class FlowControllerPhysical : MonoBehaviour {
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.POST(apiController.UrlBase, "update/simulator", request, OnCompletedEx, OnError);   
+        apiController.POST(apiController.UrlBase, "update/simulator/phys", request, OnCompletedEx, OnError);   
     }
-    public void getSimulatorData(){
+    public static void getUserByGuid(){
+        Debug.Log("-----------------Entró a getUserByGuid de FlowControllerPhysical------------");
+        guid += URLParameterReader.usuario.Guid;
+        Debug.Log(guid);
+        /*
         DatosPruebaUsuario datosPruebaUsuario = new DatosPruebaUsuario();
+        datosPruebaUsuario.user_id = URLParameterReader.usuario.Id;
+        datosPruebaUsuario.grupo = URLParameterReader.usuario.Grupo;
+        datosPruebaUsuario.sub_grupo = URLParameterReader.usuario.SubGrupo;
+        datosPruebaUsuario.is_groupal = URLParameterReader.usuario.IsGrupal;
+        Debug.Log("datosPruebaUsuario.user_id");
+        Debug.Log(datosPruebaUsuario.user_id);
+        */
+    }
+
+    public void getSimulatorData(){
+        //Debug.Log(guid);
+        //apiController.GETJSON(guid, null , null, catchPlayer, OnError);  
+        DatosPruebaUsuario datosPruebaUsuario = new DatosPruebaUsuario();
+        datosPruebaUsuario.user_id = URLParameterReader.usuario.Id;
+        datosPruebaUsuario.grupo = URLParameterReader.usuario.Grupo;
+        datosPruebaUsuario.sub_grupo = URLParameterReader.usuario.SubGrupo;
+        datosPruebaUsuario.is_groupal = URLParameterReader.usuario.IsGrupal;
         string request = JsonUtility.ToJson(datosPruebaUsuario);       
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador", request, catchPlayer, OnError);  
+        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, catchPlayer, OnError);  
     } 
     public void getSimulatorDataPlayer(){
         DatosPruebaUsuario datosPruebaUsuario = new DatosPruebaUsuario();
+        datosPruebaUsuario.user_id = URLParameterReader.usuario.Id;
+        datosPruebaUsuario.grupo = URLParameterReader.usuario.Grupo;
+        datosPruebaUsuario.sub_grupo = URLParameterReader.usuario.SubGrupo;
+        datosPruebaUsuario.is_groupal = URLParameterReader.usuario.IsGrupal;
         string request = JsonUtility.ToJson(datosPruebaUsuario);       
         #if UNITY_EDITOR
         print(request);
         #endif
-        apiController.GETJSON(apiController.UrlBase, "get/simulador/phys", request, catchDataSim, OnError);
+        apiController.GETJSON(apiController.UrlBase, "get/dataSimulador/phys", request, catchDataSim, OnError);
     }    
     public void catchPlayer(WWW response){
         String player = response.text;
